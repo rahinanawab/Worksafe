@@ -8,7 +8,12 @@ public class WorkorderTest extends BaseTest{
     public void workorders() throws InterruptedException {
             workorder = new Workorder();
             workorder.wo();
-//            workorder.createWoButton();
+            workorder.createWoButton();
+//            workorder.createBYme();
 //            workorder.optwoview();
+//            workorder.optwodel();
+            workorder.optwoedit();
+            workorder.assignedTome();
+            workorder.optwocomp();
     }
 }

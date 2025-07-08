@@ -1,16 +1,15 @@
 package pageObjects;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 public class Workorder extends BasePage {
     private final By wotab = By.xpath("//*[@aria-describedby='«rb»']");
@@ -45,8 +44,10 @@ public class Workorder extends BasePage {
     private final By addemailbutton = By.cssSelector("._AddEmailBtn_1fzsm_447");
     private final By circlemap = By.xpath("//div[@class='_PolyCard_1fzsm_250']//div[1]");
     private final By addwobutton = By.xpath("//button[normalize-space()='Add work order']");
+    private final By createdbyme = By.xpath("//button[normalize-space()='Created By Me']");
+    private final By assignedtome = By.xpath("//button[normalize-space()='Assign To Me']");
     private final By optionwo = By.xpath("(//*[name()='svg'][@class='ant-dropdown-trigger'])[1]");
-    private final By editwobutton = By.xpath("//button[normalize-space()='Save Work Order']");
+    private final By editwobutton = By.xpath("//button[normalize-space()='Save work order']");
 
 
     private final Random random = new Random();
@@ -211,7 +212,7 @@ public class Workorder extends BasePage {
         driver.findElement(material).sendKeys(getRandomString(6));
         driver.findElement(workreq).sendKeys(getRandomString(6));
         driver.findElement(uploadWarDoc).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
-        driver.findElement(uploadPhoto).sendKeys("C:\\Users\\Maze Digital\\Pictures\\Screenshots\\Screenshot 2025-07-01 150409.png");
+        driver.findElement(uploadPhoto).sendKeys("C:\\Users\\Maze Digital\\Pictures\\Screenshots\\Screenshot 2025-07-08 164806.png");
         driver.findElement(uploadSafDoc).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
         driver.findElement(email).sendKeys(getRandomEmail());
         driver.findElement(addemailbutton).click();
@@ -219,6 +220,11 @@ public class Workorder extends BasePage {
         driver.findElement(addwobutton).click();
         Thread.sleep(1000);
     }
+
+    public void createBYme(){
+        driver.findElement(createdbyme).click();
+    }
+
     public void optwoview() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         WebElement optview = wait.until(ExpectedConditions.presenceOfElementLocated(optionwo));
@@ -232,7 +238,7 @@ public class Workorder extends BasePage {
         WebElement optdel = wait.until(ExpectedConditions.presenceOfElementLocated(optionwo));
         Thread.sleep(1000);
         optdel.click();
-        WebElement viewwo = driver.findElement(By.xpath("//div[normalize-space()='Archived Work Order']"));
+        WebElement viewwo = driver.findElement(By.xpath("//div[normalize-space()='Archive Work Order']"));
         viewwo.click();
         try {
 //            WebElement yes = driver.findElement(By.xpath("//button[@class='_CheckBtn_1vq1m_146']//*[name()='svg']"));
@@ -242,5 +248,39 @@ public class Workorder extends BasePage {
         } catch (NoAlertPresentException e) {
             System.out.println("No alert present after clicking Archived Work Order.");
         }
+    }
+    public void optwoedit() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        WebElement optedit = wait.until(ExpectedConditions.presenceOfElementLocated(optionwo));
+        Thread.sleep(1000);
+        optedit.click();
+        WebElement editwo = driver.findElement(By.xpath("//div[normalize-space()='Edit Work Order']"));
+        editwo.click();
+        Thread.sleep(1000);
+
+        WebElement edittitleField = driver.findElement(title);
+        edittitleField.clear();
+        edittitleField.sendKeys(getRandomString(6));
+
+        WebElement locationField = driver.findElement(location);
+        locationField.clear();
+        locationField.sendKeys(getRandomString(6));
+        Thread.sleep(1000);
+
+        driver.findElement(editwobutton).click();
+        Thread.sleep(1000);
+    }
+    public void optwocomp() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        WebElement optview = wait.until(ExpectedConditions.presenceOfElementLocated(optionwo));
+        Thread.sleep(1000);
+        optview.click();
+        WebElement compwo = driver.findElement(By.xpath("//div[normalize-space()='Complete']"));
+        compwo.click();
+        WebElement comp = driver.findElement(By.xpath("//button[normalize-space()='Save changes']"));
+        comp.click();
+    }
+    public void assignedTome(){
+        driver.findElement(assignedtome).click();
     }
 }
