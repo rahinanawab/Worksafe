@@ -104,7 +104,7 @@ public class Poi extends BasePage {
         List<WebElement> options2 = driver.findElements(By.xpath("//li//span//div"));
         if (!options2.isEmpty()) {
             Random rand1 = new Random();
-            int randomIndex = rand1.nextInt(options.size());
+            int randomIndex = rand1.nextInt(options2.size());
             WebElement selectedOption = options2.get(randomIndex);
             String selectedText = selectedOption.getText().toLowerCase().trim();
             selectedOption.click();
