@@ -16,6 +16,7 @@ public class BaseTest {
     protected SearchPoi searchPoi;
     protected Poi poi;
     protected Workorder workorder;
+    protected Project project;
     protected Logout logout;
 
     @BeforeSuite
@@ -32,10 +33,11 @@ public class BaseTest {
         searchPoi = new SearchPoi();
         poi = new Poi();
         workorder = new Workorder();
+        project = new Project();
         logout = new Logout();
     }
-    @AfterSuite
-    public void tearDownSuite() {
-        BasePage.quitDriver();
-    }
+//    @AfterSuite
+//    public void tearDownSuite() {
+//        BasePage.quitDriver();
+//    }
 }

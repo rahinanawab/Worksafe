@@ -13,7 +13,8 @@
 <!--            <class name="TestCases.CompanyLicenseTest"/>-->
 <!--            <class name="TestCases.SearchPoiTest"/>-->
 <!--            <class name="TestCases.PoiTest"/>-->
-            <class name="TestCases.WorkorderTest"/>
+<!--            <class name="TestCases.WorkorderTest"/>-->
+            <class name="TestCases.ProjectTest"/>
 <!--            <class name="TestCases.LogoutTest"/>-->
         </classes>
     </test>
