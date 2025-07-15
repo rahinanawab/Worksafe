@@ -11,10 +11,10 @@
 <!--            <class name="TestCases.SearchUserTest"/>-->
 <!--            <class name="TestCases.CompanyStorageTest"/>-->
 <!--            <class name="TestCases.CompanyLicenseTest"/>-->
+            <class name="TestCases.PoiTest"/>
 <!--            <class name="TestCases.SearchPoiTest"/>-->
-<!--            <class name="TestCases.PoiTest"/>-->
 <!--            <class name="TestCases.WorkorderTest"/>-->
-            <class name="TestCases.ProjectTest"/>
+<!--            <class name="TestCases.ProjectTest"/>-->
 <!--            <class name="TestCases.LogoutTest"/>-->
         </classes>
     </test>

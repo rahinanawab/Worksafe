@@ -32,7 +32,7 @@ public class AddTeam extends BasePage {
     }
 
     private String getRandomEmail() {
-        return getRandomString(8) + "@example.com";
+        return getRandomString(8) + "@gmail.com";
     }
 
     public void addmember() throws InterruptedException {
@@ -82,6 +82,6 @@ public class AddTeam extends BasePage {
         }
 
         driver.findElement(adduserbutton).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
     }
 }

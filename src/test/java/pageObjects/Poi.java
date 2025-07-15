@@ -78,7 +78,7 @@ public class Poi extends BasePage {
         Random rand = new Random();
         Set<Integer> selectedIndexes = new HashSet<>();
         while (selectedIndexes.size() < 2) {
-            selectedIndexes.add(rand.nextInt(options.size()));
+            selectedIndexes.add(rand.nextInt(options1.size()));
         }
         for (int index : selectedIndexes) {
             elevationlevelField.click();
@@ -98,10 +98,15 @@ public class Poi extends BasePage {
         driver.findElement(extradata).click();
         driver.findElement(extradataname).sendKeys(getRandomString(6));
         driver.findElement(extradatadesc).sendKeys(getRandomString(6));
+
+
         WebElement extradatas = wait.until(ExpectedConditions.presenceOfElementLocated(extradatasetting));
         Thread.sleep(1000);
         extradatas.click();
+
+
         List<WebElement> options2 = driver.findElements(By.xpath("//li//span//div"));
+
         if (!options2.isEmpty()) {
             Random rand1 = new Random();
             int randomIndex = rand1.nextInt(options2.size());
@@ -137,14 +142,21 @@ public class Poi extends BasePage {
                     todaydate.click();
                     break;
                 case "color":
-                    WebElement colorPickerTrigger = driver.findElement(By.xpath("//div[contains(@class,'ant-color-picker-trigger')]"));
-                    colorPickerTrigger.click();
-                    Thread.sleep(1000);
-                    WebElement colorBlock = driver.findElement(By.xpath("//div[contains(@class,'ant-color-picker')]//div[contains(@class,'ant-color-picker-select')]//div[@class='ant-color-picker-handler']"));
-                    Actions actions = new Actions(driver);
-                    actions.moveToElement(colorBlock, 10, 10).click().perform();
-                    System.out.println("Color selected via canvas.");
-                    break;
+        WebElement colorPickerTrigger = driver.findElement(By.xpath("//div[contains(@class,'ant-color-picker-trigger')]"));
+        colorPickerTrigger.click();
+        Thread.sleep(500);
+        WebElement rInput = driver.findElement(By.xpath("(//div[@class='ant-color-picker-rgb-input']//input)[1]"));
+        WebElement gInput = driver.findElement(By.xpath("(//div[@class='ant-color-picker-rgb-input']//input)[2]"));
+        WebElement bInput = driver.findElement(By.xpath("(//div[@class='ant-color-picker-rgb-input']//input)[3]"));
+        rInput.clear();
+        rInput.sendKeys("104");
+        gInput.clear();
+        gInput.sendKeys("12");
+        bInput.clear();
+        bInput.sendKeys("12");
+        colorPickerTrigger.click();
+        System.out.println("RGB color set to rgb(104, 12, 12)");
+        break;
                 default:
                     System.out.println("Unknown option selected: " + selectedText);
             }
@@ -176,7 +188,7 @@ public class Poi extends BasePage {
         driver.findElement(description).sendKeys(getRandomString(10));
         driver.findElement(notificationBody).sendKeys(getRandomString(6));
         driver.findElement(uploadDoc).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
-        driver.findElement(uploadPhoto).sendKeys("C:\\Users\\Maze Digital\\Pictures\\Screenshots\\Screenshot 2025-06-25 183118.png");
+        driver.findElement(uploadPhoto).sendKeys("C:\\Users\\Maze Digital\\Pictures\\Screenshots\\Screenshot 2025-07-14 203433.png");
         driver.findElement(circlemap).click();
         driver.findElement(addpoibutton).click();
         Thread.sleep(1000);

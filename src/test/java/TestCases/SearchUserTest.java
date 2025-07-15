@@ -5,7 +5,7 @@ import pageObjects.SearchUser;
 
 public class SearchUserTest extends BaseTest{
             @Test(priority = 6, dependsOnMethods = "TestCases.LoginTest.testLogin")
-        public void testSearchUser() {
+        public void testSearchUser() throws InterruptedException {
                 searchUser = new SearchUser();
                 searchUser.users();
             searchUser.enterEmailsearch("comptestnew1@yopmail.com");

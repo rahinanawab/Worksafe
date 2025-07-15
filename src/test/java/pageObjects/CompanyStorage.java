@@ -34,10 +34,14 @@ public class CompanyStorage extends BasePage {
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 //        driver.findElement(purchaseStorage).click();
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("rc_select_1")));
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("'rc_select_1")));
+        Thread.sleep(1000);
 //        WebElement element = driver.findElement(By.id("rc_select_1"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+        Thread.sleep(1000);
+
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ant-select-item-option-content']")));
+        Thread.sleep(1000);
 
 
         List<WebElement> options = driver.findElements(By.xpath("//div[@class='ant-select-item-option-content']"));
@@ -46,8 +50,6 @@ public class CompanyStorage extends BasePage {
             int randomIndex = rand.nextInt(options.size());
             options.get(randomIndex).click();
 
-
-//            options.get(randomIndex).click();
             System.out.println("Selected option index of storage: " + randomIndex);
         } else {
             System.out.println("No options found.");
