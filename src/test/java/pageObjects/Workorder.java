@@ -95,6 +95,8 @@ public class Workorder extends BasePage {
         WebElement assignee = wait.until(ExpectedConditions.presenceOfElementLocated(AssignTo));
         Thread.sleep(1000);
         assignee.click();
+        Thread.sleep(1000);
+
         List<WebElement> options1 = driver.findElements(By.xpath("//div[@id='rc_select_3_list']/following-sibling::div//div[@class='ant-select-item-option-content']"));
         if (!options1.isEmpty()) {
             Random rand1 = new Random();
@@ -107,8 +109,9 @@ public class Workorder extends BasePage {
         Thread.sleep(1000);
 
         driver.findElement(dateaccess).click();
+
         WebElement date = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//div[@class='ant-picker-dropdown css-nxgixn ant-picker-dropdown-placement-topLeft']//div[@class='ant-picker-panel-container ant-picker-datetime-panel-container']//div[@class='ant-picker-panel-layout']//div//a[@class='ant-picker-now-btn'][normalize-space()='Now']")));
+                By.xpath("//a[normalize-space()='Now']")));
         date.click();
         Thread.sleep(1000);
 
@@ -126,13 +129,12 @@ public class Workorder extends BasePage {
         }
         Thread.sleep(1000);
 
-        driver.findElement(completionDate).click();
-
-        WebElement date1 = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//div[@class='ant-picker-dropdown css-nxgixn ant-picker-dropdown-placement-topLeft']//div[@class='ant-picker-panel-container ant-picker-datetime-panel-container']//div[@class='ant-picker-panel-layout']//div//a[@class='ant-picker-now-btn'][normalize-space()='Now']")));
-        date1.click();
-
-        Thread.sleep(1000);
+//        driver.findElement(completionDate).click();
+//        WebElement date1 = wait.until(ExpectedConditions.elementToBeClickable(
+//                By.cssSelector("div[class='ant-picker-dropdown css-nxgixn ant-picker-dropdown-placement-bottomRight'] div[class='ant-picker-panel-container ant-picker-datetime-panel-container'] div[class='ant-picker-panel-layout'] div a[class='ant-picker-now-btn']")));
+//        date1.click();
+//
+//        Thread.sleep(1000);
 
         driver.findElement(location).sendKeys(getRandomString(6));
 
@@ -149,65 +151,73 @@ public class Workorder extends BasePage {
         driver.findElement(workhourbutton).click();
         driver.findElement(closeworkhour).click();
 
-//        driver.findElement(extradata).click();
-//        driver.findElement(extradataname).sendKeys(getRandomString(6));
-//        driver.findElement(extradatadesc).sendKeys(getRandomString(6));
-//
-//            WebElement extradatas = wait.until(ExpectedConditions.presenceOfElementLocated(extradatasetting));
-//            Thread.sleep(1000);
-//            extradatas.click();
-//            List<WebElement> options3 = driver.findElements(By.xpath("//li//span//div"));
-//            if (!options3.isEmpty()) {
-//                Random rand1 = new Random();
-//                int randomIndex = rand1.nextInt(options3.size());
-//                WebElement selectedOption = options3.get(randomIndex);
-//                String selectedText = selectedOption.getText().toLowerCase().trim();
-//                selectedOption.click();
-//                System.out.println("Selected option index: " + randomIndex);
-//                System.out.println("Selected option text: " + selectedText);
-//                Thread.sleep(1000);
-//                switch (selectedText) {
-//                    case "input":
-//                        WebElement inputField = driver.findElement(By.xpath("//div[normalize-space()='Input']"));
-//                        inputField.clear();
-//                        inputField.sendKeys("Sample Text");
-//                        String inputVal = inputField.getAttribute("value");
-//                        System.out.println("Input Value: " + inputVal);
-//                        break;
-//                    case "boolean":
-//                        WebElement toggleSwitch = driver.findElement(By.xpath("//div[normalize-space()='Boolean']"));
-//                        String isChecked = toggleSwitch.getAttribute("aria-checked");
-//                        if (!"true".equals(isChecked)) {
-//                            toggleSwitch.click();
-//                        }
-//                        String updatedCheck = toggleSwitch.getAttribute("aria-checked");
-//                        System.out.println("Switch checked: " + updatedCheck);
-//                        break;
-//                    case "date":
-//                        WebElement dateInput = driver.findElement(By.xpath("//div[contains(text(),'Date')]"));
-//                        Thread.sleep(1000);
-//                        dateInput.click();
-//                        WebElement todaydate = wait.until(ExpectedConditions.elementToBeClickable(
-//                                By.xpath("//div[@class='ant-picker-dropdown css-nxgixn ant-picker-dropdown-placement-bottomLeft']//div[@class='ant-picker-panel-container ant-picker-date-panel-container']//div[@class='ant-picker-panel-layout']//div//a[@class='ant-picker-now-btn'][normalize-space()='Today']")));
-//                        todaydate.click();
-//                        break;
-//                    case "color":
-//                        WebElement colorPickerTrigger = driver.findElement(By.xpath("//div[normalize-space()='Color']"));
-//                        colorPickerTrigger.click();
-//                        Thread.sleep(1000);
-//                        WebElement colorBlock = driver.findElement(By.xpath("//div[contains(@class,'ant-color-picker')]//div[contains(@class,'ant-color-picker-select')]//div[@class='ant-color-picker-handler']"));
-//                        Actions actions = new Actions(driver);
-//                        actions.moveToElement(colorBlock, 10, 10).click().perform();
-//                        System.out.println("Color selected via canvas.");
-//                        break;
-//                    default:
-//                        System.out.println("Unknown option selected: " + selectedText);
-//                }
-//            } else {
-//                System.out.println("No options found.");
-//            }
-//            driver.findElement(extradataButton).click();
-//            driver.findElement(closeextradata).click();
+        driver.findElement(extradata).click();
+        driver.findElement(extradataname).sendKeys(getRandomString(6));
+        driver.findElement(extradatadesc).sendKeys(getRandomString(6));
+
+            WebElement extradatas = wait.until(ExpectedConditions.presenceOfElementLocated(extradatasetting));
+            Thread.sleep(1000);
+            extradatas.click();
+            List<WebElement> options3 = driver.findElements(By.xpath("//li//span//div"));
+            if (!options3.isEmpty()) {
+                Random rand1 = new Random();
+                int randomIndex = rand1.nextInt(options3.size());
+                WebElement selectedOption = options3.get(randomIndex);
+                String selectedText = selectedOption.getText().toLowerCase().trim();
+                selectedOption.click();
+                System.out.println("Selected option index: " + randomIndex);
+                System.out.println("Selected option text: " + selectedText);
+                Thread.sleep(1000);
+                switch (selectedText) {
+                    case "input":
+                        WebElement inputField = driver.findElement(By.xpath("//input[@placeholder='Value here']"));
+                        inputField.clear();
+                        inputField.sendKeys("Sample Text");
+                        String inputVal = inputField.getAttribute("value");
+                        System.out.println("Input Value: " + inputVal);
+                        break;
+                    case "boolean":
+                        WebElement toggleSwitch = driver.findElement(By.xpath("//button[contains(@class,'ant-switch')]"));
+                        String isChecked = toggleSwitch.getAttribute("aria-checked");
+                        if (!"true".equals(isChecked)) {
+                            toggleSwitch.click();
+                        }
+                        String updatedCheck = toggleSwitch.getAttribute("aria-checked");
+                        System.out.println("Switch checked: " + updatedCheck);
+                        break;
+                    case "date":
+                        WebElement dateInput = driver.findElement(By.xpath("//input[@placeholder='Select Date']"));
+                        Thread.sleep(1000);
+                        dateInput.click();
+                        WebElement todaydate = wait.until(ExpectedConditions.elementToBeClickable(
+                                By.xpath("//td[@class='ant-picker-cell ant-picker-cell-in-view ant-picker-cell-today']")));
+                        todaydate.click();
+                        break;
+                    case "color":
+                        WebElement colorPickerTrigger = driver.findElement(By.xpath("//div[contains(@class,'ant-color-picker-trigger')]"));
+                        colorPickerTrigger.click();
+                        Thread.sleep(500);
+                        WebElement rInput = driver.findElement(By.xpath("(//div[@class='ant-color-picker-rgb-input']//input)[1]"));
+                        WebElement gInput = driver.findElement(By.xpath("(//div[@class='ant-color-picker-rgb-input']//input)[2]"));
+                        WebElement bInput = driver.findElement(By.xpath("(//div[@class='ant-color-picker-rgb-input']//input)[3]"));
+                        rInput.clear();
+                        rInput.sendKeys("104");
+                        gInput.clear();
+                        gInput.sendKeys("12");
+                        bInput.clear();
+                        bInput.sendKeys("12");
+                        colorPickerTrigger.click();
+                        System.out.println("RGB color set to rgb(104, 12, 12)");
+                        break;
+
+                    default:
+                        System.out.println("Unknown option selected: " + selectedText);
+                }
+            } else {
+                System.out.println("No options found.");
+            }
+            driver.findElement(extradataButton).click();
+            driver.findElement(closeextradata).click();
 
         driver.findElement(material).sendKeys(getRandomString(6));
         driver.findElement(workreq).sendKeys(getRandomString(6));

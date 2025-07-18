@@ -9,5 +9,24 @@ public class ProjectTest extends BaseTest {
         project = new Project();
         project.project();
         project.createButton();
+        project.dept();
+        project.elevation();
+        project.wo();
+        project.projman();
+        project.con();
+//        project.exdata();
+        project.notificationdatetime();
+        project.noticationtimemint();
+        project.setUploadPhoto();
+        project.setUploadDoc();
+        project.setUploadSafetyDoc();
+        project.setUploadWarrentyDoc();
+        project.setUploadTrainingDoc();
+        project.setUploadPermitDoc();
+        project.setCirclemap();
+        project.setAddprojectbutton();
+//        project.optprojectview();
+//        project.optprojectdel();
+//    project.optprojectedit();
     }
 }

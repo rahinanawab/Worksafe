@@ -210,12 +210,12 @@ public class Poi extends BasePage {
         WebElement viewpoi = driver.findElement(By.xpath("//div[normalize-space()='Archived POI']"));
         viewpoi.click();
 //        try {
-//////                        Alert alert = driver.switchTo().alert();
-//////                        //alert.accept();
-//////                        alert.dismiss();
-//////                    } catch (NoAlertPresentException e) {
-//////                        System.out.println("No alert present after clicking Archived POI.");
-//////                    }
+//                        Alert alert = driver.switchTo().alert();
+//                        //alert.accept();
+//                        alert.dismiss();
+//                    } catch (NoAlertPresentException e) {
+//                        System.out.println("No alert present after clicking Archived POI.");
+//                    }
         try {
 //            WebElement yes = driver.findElement(By.xpath("//button[@class='_CheckBtn_1vq1m_146']//*[name()='svg']"));
 //            yes.click();

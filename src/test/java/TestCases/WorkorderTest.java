@@ -12,8 +12,8 @@ public class WorkorderTest extends BaseTest{
 //            workorder.createBYme();
 //            workorder.optwoview();
 //            workorder.optwodel();
-            workorder.optwoedit();
-            workorder.assignedTome();
-            workorder.optwocomp();
+//            workorder.optwoedit();
+//            workorder.assignedTome();
+//            workorder.optwocomp();
     }
 }

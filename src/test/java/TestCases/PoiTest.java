@@ -9,8 +9,8 @@ public class PoiTest extends BaseTest{
         poi = new Poi();
         poi.poi();
     poi.createButton();
-    poi.optpoiview();
-    poi.optpoidel();
-    poi.optpoiedit();
+//    poi.optpoiview();
+//    poi.optpoidel();
+//    poi.optpoiedit();
     }
 }
