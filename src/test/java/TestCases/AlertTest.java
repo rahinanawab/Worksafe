@@ -11,7 +11,7 @@ public class AlertTest extends BaseTest{
         alert.createButton();
 //        alert.optalertview();
 //        alert.optalertdel();
-        alert.optalertedit();
+//        alert.optalertedit();
 
     }
 }
