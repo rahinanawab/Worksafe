@@ -1,0 +1,13 @@
+package TestCases;
+
+import org.testng.annotations.Test;
+import pageObjects.SearchAlert;
+import pageObjects.SearchProject;
+
+public class SearchAlertTest extends BaseTest{
+    @Test(priority = 15, dependsOnMethods = "TestCases.LoginTest.testLogin")
+    public void testSearchalert() throws InterruptedException {
+        searchAlert = new SearchAlert();
+        searchAlert.searchalert();
+    }
+}

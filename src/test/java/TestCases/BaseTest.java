@@ -17,6 +17,9 @@ public class BaseTest {
     protected Poi poi;
     protected Workorder workorder;
     protected Project project;
+    protected SearchProject searchProject;
+    protected Alert alert;
+    protected SearchAlert searchAlert;
     protected Logout logout;
 
     @BeforeSuite
@@ -34,6 +37,9 @@ public class BaseTest {
         poi = new Poi();
         workorder = new Workorder();
         project = new Project();
+        searchProject = new SearchProject();
+        alert = new Alert();
+        searchAlert = new SearchAlert();
         logout = new Logout();
     }
 //    @AfterSuite

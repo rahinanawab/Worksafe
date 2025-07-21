@@ -27,6 +27,6 @@ public class ProjectTest extends BaseTest {
         project.setAddprojectbutton();
 //        project.optprojectview();
 //        project.optprojectdel();
-//    project.optprojectedit();
+        project.optprojectedit();
     }
 }

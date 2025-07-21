@@ -12,6 +12,7 @@ public class Login extends BasePage {
 
     public void navigateToLoginPage() {
         driver.get("https://app.worksafemaps.com/");
+//        driver.get("https://work-safe-new-ui.vercel.app/");
     }
 
 //    public void acceptTermsAndContinue() {
@@ -33,5 +34,6 @@ public class Login extends BasePage {
 
     public boolean isLoginSuccessful() {
         return driver.getCurrentUrl().contains("https://app.worksafemaps.com/");
+//        return driver.getCurrentUrl().contains("https://work-safe-new-ui.vercel.app/");
     }
 }
