@@ -20,6 +20,8 @@ public class BaseTest {
     protected SearchProject searchProject;
     protected Alert alert;
     protected SearchAlert searchAlert;
+    protected Asset asset;
+    protected SearchAsset searchAsset;
     protected Logout logout;
 
     @BeforeSuite
@@ -40,10 +42,12 @@ public class BaseTest {
         searchProject = new SearchProject();
         alert = new Alert();
         searchAlert = new SearchAlert();
+        asset = new Asset();
+        searchAsset = new SearchAsset();
         logout = new Logout();
     }
-//    @AfterSuite
-//    public void tearDownSuite() {
-//        BasePage.quitDriver();
-//    }
+    @AfterSuite
+    public void tearDownSuite() {
+        BasePage.quitDriver();
+    }
 }

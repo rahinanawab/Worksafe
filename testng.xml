@@ -16,8 +16,10 @@
 <!--            <class name="TestCases.WorkorderTest"/>-->
 <!--            <class name="TestCases.ProjectTest"/>-->
 <!--            <class name="TestCases.SearchProjectTest"/>-->
-            <class name="TestCases.AlertTest"/>
+<!--            <class name="TestCases.AlertTest"/>-->
 <!--            <class name="TestCases.SearchAlertTest"/>-->
+            <class name="TestCases.AssetTest"/>
+            <class name="TestCases.SearchAssetTest"/>
 <!--            <class name="TestCases.LogoutTest"/>-->
         </classes>
     </test>
