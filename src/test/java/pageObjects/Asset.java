@@ -15,7 +15,7 @@ import java.util.Set;
 
 public class Asset extends BasePage{
 
-    private final By assettab = By.xpath("//*[@aria-describedby='«ro»']");
+    private final By assettab = By.xpath("//*[@aria-describedby='«rj»']");
     private final By createAssetButton = By.xpath("//div[@class='_TabHeader_1vq1m_12']//div/button[3]");
     private final By assettype = By.id("rc_select_1");
     private final By department = By.id("rc_select_2");
