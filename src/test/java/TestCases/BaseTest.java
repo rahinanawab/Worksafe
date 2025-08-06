@@ -48,8 +48,8 @@ public class BaseTest {
         dailyProject = new DailyProject();
         logout = new Logout();
     }
-//    @AfterSuite
-//    public void tearDownSuite() {
-//        BasePage.quitDriver();
-//    }
+    @AfterSuite
+    public void tearDownSuite() {
+        BasePage.quitDriver();
+    }
 }

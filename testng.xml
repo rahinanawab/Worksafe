@@ -20,8 +20,8 @@
 <!--            <class name="TestCases.SearchAlertTest"/>-->
 <!--            <class name="TestCases.AssetTest"/>-->
 <!--            <class name="TestCases.SearchAssetTest"/>-->
-            <class name="TestCases.DailyProjectTest"/>
-<!--            <class name="TestCases.LogoutTest"/>-->
+<!--            <class name="TestCases.DailyProjectTest"/>-->
+            <class name="TestCases.LogoutTest"/>
         </classes>
     </test>
 </suite>
