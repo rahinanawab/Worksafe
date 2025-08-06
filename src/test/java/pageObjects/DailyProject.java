@@ -59,9 +59,9 @@ public class DailyProject extends BasePage{
     private final By dateapproved = By.xpath("//input[@placeholder='Select Date Approved']");
     private final By remainderdatetime = By.xpath("//input[@placeholder='Select Reminder Date & Time']");
     private final By uploadPhoto = By.xpath("(//input[@accept='.png,.jpg,.jpeg,.svg'])");
-    private final By uploadDoc = By.xpath("(//input[@accept='.pdf'])[1]");
-    private final By uploadSafetyDoc = By.xpath("(//input[@accept='.pdf'])[2]");
-    private final By uploadWarrentyDoc = By.xpath("(//input[@accept='.pdf'])[3]");
+    private final By uploadDoc = By.xpath("(//input[@accept='.pdf,.docx,.doc'])[1]");
+    private final By uploadSafetyDoc = By.xpath("(//input[@accept='.pdf,.docx,.doc'])[2]");
+    private final By uploadWarrentyDoc = By.xpath("(//input[@accept='..pdf,.docx,.doc'])[3]");
     private final By adddailyprojectbutton = By.xpath("//button[normalize-space()='Add Daily Project']");
 //    private final By optionproject = By.xpath("(//*[name()='svg'][@class='ant-dropdown-trigger'])[1]");
 //    private final By editprojectbutton = By.xpath("//button[normalize-space()='Save Project']");
@@ -287,13 +287,13 @@ public class DailyProject extends BasePage{
         Thread.sleep(1000);
         approversField.click();
         List<WebElement> options1 = driver.findElements(By.xpath("//div[@id='rc_select_6_list']/following-sibling::div//div[@class='ant-select-item-option-content']"));
-        if (options1.size() < 3) {
+        if (options1.size() < 2) {
             System.out.println("Not enough options to select");
             return;
         }
         Random rand = new Random();
         Set<Integer> selectedIndexes = new HashSet<>();
-        while (selectedIndexes.size() < 2) {
+        while (selectedIndexes.size() < 1) {
             selectedIndexes.add(rand.nextInt(options1.size()));
         }
         for (int index : selectedIndexes) {
