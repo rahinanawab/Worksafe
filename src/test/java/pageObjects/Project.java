@@ -11,7 +11,7 @@ import java.time.Duration;
 import java.util.*;
 
 public class Project extends BasePage {
-    private final By projecttab = By.xpath("//*[@aria-describedby='«rf»']");
+    private final By projecttab = By.xpath("//*[@aria-describedby='«rh»']");
     private final By createProjectButton = By.xpath("//div[@class='_TabHeader_1vq1m_12']//div/button[3]");
     private final By projectname = By.xpath("//input[@placeholder='Enter Project Name']");
     private final By department = By.id("rc_select_1");
@@ -31,7 +31,7 @@ public class Project extends BasePage {
     private final By selectcontractor = By.xpath("//div[@class='_FeildColRight_e1z2y_241']//div[@class='_AddExtraDataFeild_e1z2y_344']//div[1]");
     private final By selectCheckbox = By.cssSelector("input.ant-checkbox-input");
     private final By closecontractor = By.xpath("//div[@class='ant-drawer-content-wrapper']//button[@aria-label='Close']");
-    private final By extradata = By.cssSelector("div[class='_FeildColLeft_e1z2y_224'] div[class='_AddExtraDataFeild_e1z2y_344']");
+    private final By extradata = By.xpath("(//div[@class='_FeildColLeft_e1z2y_224']//div[@class='_AddExtraDataFeild_e1z2y_344'])[1]");
     private final By extradataname = By.xpath("//input[@placeholder='Name here']");
     private final By extradatadesc = By.xpath("//textarea[@placeholder='Description here']");
     private final By extradatasetting = By.xpath("//body//div//div[@class='ant-drawer-body']//div//div[2]//*[name()='svg']");
@@ -49,7 +49,6 @@ public class Project extends BasePage {
     private final By addprojectbutton = By.xpath("//button[normalize-space()='Add Project']");
     private final By optionproject = By.xpath("(//*[name()='svg'][@class='ant-dropdown-trigger'])[1]");
     private final By editprojectbutton = By.xpath("//button[normalize-space()='Save Project']");
-
 
     private final Random random = new Random();
 

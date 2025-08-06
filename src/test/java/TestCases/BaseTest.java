@@ -22,6 +22,7 @@ public class BaseTest {
     protected SearchAlert searchAlert;
     protected Asset asset;
     protected SearchAsset searchAsset;
+    protected DailyProject dailyProject;
     protected Logout logout;
 
     @BeforeSuite
@@ -44,10 +45,11 @@ public class BaseTest {
         searchAlert = new SearchAlert();
         asset = new Asset();
         searchAsset = new SearchAsset();
+        dailyProject = new DailyProject();
         logout = new Logout();
     }
-    @AfterSuite
-    public void tearDownSuite() {
-        BasePage.quitDriver();
-    }
+//    @AfterSuite
+//    public void tearDownSuite() {
+//        BasePage.quitDriver();
+//    }
 }

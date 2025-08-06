@@ -12,7 +12,7 @@ import java.util.Random;
 import java.util.Set;
 
 public class Poi extends BasePage {
-    private final By poitab = By.xpath("//*[@aria-describedby='«rd»']");
+    private final By poitab = By.xpath("//*[@aria-describedby='«rb»']");
     private final By createPOIButton = By.xpath("//div[@class='_TabHeader_1vq1m_12']//div/button[4]");
     private final By title = By.xpath("//input[@placeholder='Enter Title']");
     private final By threatlevel = By.id("rc_select_1");

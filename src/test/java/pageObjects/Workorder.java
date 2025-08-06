@@ -12,7 +12,7 @@ import java.util.Random;
 import java.util.Set;
 
 public class Workorder extends BasePage {
-    private final By wotab = By.xpath("//*[@aria-describedby='«rb»']");
+    private final By wotab = By.xpath("//*[@aria-describedby='«rj»']");
     private final By createwobButton = By.xpath("//div[@class='_TabHeader_1vq1m_12']//div/button[4]");
     public final By title = By.xpath("//input[@placeholder='Enter Title']");
     private final By priority = By.id("rc_select_2");

@@ -14,7 +14,7 @@ import java.util.Random;
 import java.util.Set;
 
 public class Alert extends BasePage {
-    private final By alerttab = By.xpath("//*[@aria-describedby='«rh»']");
+    private final By alerttab = By.xpath("//*[@aria-describedby='«rd»']");
     private final By createAlertButton = By.xpath("//div[@class='_TabHeader_1vq1m_12']//div/button[3]");
     private final By title = By.xpath("//input[@placeholder='Enter Title']");
     private final By threatlevel = By.id("rc_select_1");
