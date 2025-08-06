@@ -175,7 +175,7 @@ public class DailyProject extends BasePage{
                     Thread.sleep(1000);
                     dateInput.click();
                     WebElement todaydate = wait.until(ExpectedConditions.elementToBeClickable(
-                            By.xpath("//td[@class='ant-picker-cell ant-picker-cell-in-view ant-picker-cell-today']")));
+                            By.xpath("//a[normalize-space()='Today']")));
                     todaydate.click();
                     break;
                 case "color":
