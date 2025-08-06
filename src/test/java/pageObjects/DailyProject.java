@@ -63,8 +63,8 @@ public class DailyProject extends BasePage{
     private final By uploadSafetyDoc = By.xpath("(//input[@accept='.pdf,.docx,.doc'])[2]");
     private final By uploadWarrentyDoc = By.xpath("(//input[@accept='.pdf,.docx,.doc'])[3]");
     private final By adddailyprojectbutton = By.xpath("//button[normalize-space()='Add Daily Project']");
-//    private final By optionproject = By.xpath("(//*[name()='svg'][@class='ant-dropdown-trigger'])[1]");
-//    private final By editprojectbutton = By.xpath("//button[normalize-space()='Save Project']");
+    private final By optiondailyproject = By.xpath("(//*[name()='svg'][@class='ant-dropdown-trigger'])[1]");
+    private final By editdailyprojectbutton = By.xpath("//button[normalize-space()='Save Daily Project']");
 
     private final Random random = new Random();
 
@@ -339,6 +339,71 @@ public class DailyProject extends BasePage{
 
     public void setAdddailyprojectbutton() throws InterruptedException {
         driver.findElement(adddailyprojectbutton).click();
+        Thread.sleep(1000);
+    }
+
+    public void optdailyprojectview() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        WebElement optview = wait.until(ExpectedConditions.presenceOfElementLocated(optiondailyproject));
+        Thread.sleep(1000);
+        optview.click();
+        WebElement viewdailyproject = driver.findElement(By.xpath("//div[normalize-space()='View Daily Project']"));
+        viewdailyproject.click();
+    }
+    public void optdailyprojectdel() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        WebElement optdel = wait.until(ExpectedConditions.presenceOfElementLocated(optiondailyproject));
+        Thread.sleep(1000);
+        optdel.click();
+        WebElement viewdailyproject = driver.findElement(By.xpath("//div[normalize-space()='Delete Daily Project']"));
+        viewdailyproject.click();
+//        try {
+//                        Alert alert = driver.switchTo().alert();
+//                        //alert.accept();
+//                        alert.dismiss();
+//                    } catch (NoAlertPresentException e) {
+//                        System.out.println("No alert present after clicking Archived POI.");
+//                    }
+        try {
+//            WebElement yes = driver.findElement(By.xpath("//button[@class='_CheckBtn_1vq1m_146']//*[name()='svg']"));
+//            yes.click();
+            WebElement no = driver.findElement(By.xpath("//button[contains(@class,'_CloseBtn_1vq1m_162')]//*[name()='svg']"));
+            no.click();
+        } catch (NoAlertPresentException e) {
+            System.out.println("No alert present after clicking Delete Daily Project.");
+        }
+    }
+    public void optdailyprojectedit() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        WebElement optedit = wait.until(ExpectedConditions.presenceOfElementLocated(optiondailyproject));
+        Thread.sleep(1000);
+        optedit.click();
+        WebElement editproject = driver.findElement(By.xpath("//div[normalize-space()='Edit Daily Project']"));
+        editproject.click();
+
+        WebElement projectnamefield = driver.findElement(projectname);
+        projectnamefield.clear();
+        projectnamefield.sendKeys(getRandomString(6));
+
+        WebElement editapproversField = wait.until(ExpectedConditions.presenceOfElementLocated(approvers));
+        Thread.sleep(1000);
+        editapproversField.click();
+        List<WebElement> elevationOptions = driver.findElements(By.xpath("//div[@id='rc_select_6_list']/following-sibling::div//div[@class='ant-select-item-option-content']"));
+        Set<Integer> selectedIndexes = new HashSet<>();
+        while (selectedIndexes.size() < 2 && elevationOptions.size() >= 2) {
+            selectedIndexes.add(new Random().nextInt(elevationOptions.size()));
+        }
+        for (int index : selectedIndexes) {
+            editapproversField.click();
+            Thread.sleep(500);
+            List<WebElement> refreshedOptions = driver.findElements(By.xpath("//div[@id='rc_select_6_list']/following-sibling::div//div[@class='ant-select-item-option-content']"));
+            if (index < refreshedOptions.size()) {
+                refreshedOptions.get(index).click();
+            }
+            Thread.sleep(500);
+        }
+
+        driver.findElement(editdailyprojectbutton).click();
         Thread.sleep(1000);
     }
 }

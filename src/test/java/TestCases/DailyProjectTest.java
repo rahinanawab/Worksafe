@@ -11,13 +11,16 @@ public class DailyProjectTest extends BaseTest{
         dailyProject.optprojectview();
         dailyProject.setDailyproject();
         dailyProject.createdailyButton();
-//        dailyProject.exdata();
-//        dailyProject.occurance();
-//        dailyProject.setScope();
+        dailyProject.exdata();
+        dailyProject.occurance();
+        dailyProject.setScope();
         dailyProject.setUploadPhoto();
         dailyProject.setUploadDoc();
         dailyProject.setUploadSafetyDoc();
         dailyProject.setUploadWarrentyDoc();
         dailyProject.setAdddailyprojectbutton();
+//        dailyProject.optdailyprojectview();
+//        dailyProject.optdailyprojectdel();
+        dailyProject.optdailyprojectedit();
     }
 }
