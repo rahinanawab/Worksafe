@@ -339,7 +339,7 @@ public class DailyProject extends BasePage{
 
     public void setAdddailyprojectbutton() throws InterruptedException {
         driver.findElement(adddailyprojectbutton).click();
-        Thread.sleep(1000);
+        Thread.sleep(4000);
     }
 
     public void optdailyprojectview() throws InterruptedException {
