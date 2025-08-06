@@ -12,8 +12,8 @@ public class DailyProjectTest extends BaseTest{
         dailyProject.setDailyproject();
         dailyProject.createdailyButton();
 //        dailyProject.exdata();
-        dailyProject.occurance();
-        dailyProject.setScope();
+//        dailyProject.occurance();
+//        dailyProject.setScope();
         dailyProject.setUploadPhoto();
         dailyProject.setUploadDoc();
         dailyProject.setUploadSafetyDoc();

@@ -61,7 +61,7 @@ public class DailyProject extends BasePage{
     private final By uploadPhoto = By.xpath("(//input[@accept='.png,.jpg,.jpeg,.svg'])");
     private final By uploadDoc = By.xpath("(//input[@accept='.pdf,.docx,.doc'])[1]");
     private final By uploadSafetyDoc = By.xpath("(//input[@accept='.pdf,.docx,.doc'])[2]");
-    private final By uploadWarrentyDoc = By.xpath("(//input[@accept='..pdf,.docx,.doc'])[3]");
+    private final By uploadWarrentyDoc = By.xpath("(//input[@accept='.pdf,.docx,.doc'])[3]");
     private final By adddailyprojectbutton = By.xpath("//button[normalize-space()='Add Daily Project']");
 //    private final By optionproject = By.xpath("(//*[name()='svg'][@class='ant-dropdown-trigger'])[1]");
 //    private final By editprojectbutton = By.xpath("//button[normalize-space()='Save Project']");
