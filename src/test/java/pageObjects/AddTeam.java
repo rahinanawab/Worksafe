@@ -12,7 +12,6 @@ import java.time.Duration;
 
 public class AddTeam extends BasePage {
     private final By addteamtab = By.xpath("//*[@aria-describedby='«r5»']");
-    private final By addteamtabb = By.xpath("//*[@aria-describedby='«r5»']");
     private final By addmember = By.xpath("//div[@class='ant-dropdown-trigger']//*[name()='svg']");
     private final By member = By.xpath("//div[contains(text(),'Add member')]");
     private final By firstname = By.xpath("//input[@placeholder='Enter first name']");
