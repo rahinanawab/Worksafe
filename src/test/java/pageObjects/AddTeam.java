@@ -11,6 +11,7 @@ import java.util.Random;
 import java.time.Duration;
 
 public class AddTeam extends BasePage {
+    private final By addteamtab = By.xpath("//*[@aria-describedby='«r5»']");
     private final By addmember = By.xpath("//div[@class='ant-dropdown-trigger']//*[name()='svg']");
     private final By member = By.xpath("//div[contains(text(),'Add member')]");
     private final By firstname = By.xpath("//input[@placeholder='Enter first name']");
@@ -35,6 +36,11 @@ public class AddTeam extends BasePage {
         return getRandomString(8) + "@gmail.com";
     }
 
+    public void teamtab() throws InterruptedException {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+        Thread.sleep(2000);
+        driver.findElement(addteamtab).click();
+    }
     public void addmember() throws InterruptedException {
         driver.findElement(addmember).click();
 

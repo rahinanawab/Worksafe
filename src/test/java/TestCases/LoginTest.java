@@ -8,7 +8,7 @@ public class LoginTest extends BaseTest{
 public void testLogin() {
     loginPage.navigateToLoginPage();
 //        loginPage.acceptTermsAndContinue();
-    loginPage.enterEmail("comptestnew1@yopmail.com");
+    loginPage.enterEmail("comptestnew2@yopmail.com");
     loginPage.enterPassword("Test@123");
     loginPage.clickLogin();
     Assert.assertTrue(loginPage.isLoginSuccessful(), "Login Failed!");

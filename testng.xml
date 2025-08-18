@@ -5,8 +5,8 @@
         <classes>
             <class name="TestCases.LoginTest"/>
             <class name="TestCases.SelectWorksiteTest"/>
-<!--            <class name="TestCases.SearchTeamTest"/>-->
-<!--            <class name="TestCases.AddTeamTest"/>-->
+            <class name="TestCases.AddTeamTest"/>
+            <class name="TestCases.SearchTeamTest"/>
 <!--            <class name="TestCases.RemoveTeamTest"/>-->
 <!--            <class name="TestCases.SearchUserTest"/>-->
 <!--            <class name="TestCases.CompanyStorageTest"/>-->
@@ -21,7 +21,7 @@
 <!--            <class name="TestCases.AssetTest"/>-->
 <!--            <class name="TestCases.SearchAssetTest"/>-->
 <!--            <class name="TestCases.DailyProjectTest"/>-->
-            <class name="TestCases.LogoutTest"/>
+<!--            <class name="TestCases.LogoutTest"/>-->
         </classes>
     </test>
 </suite>

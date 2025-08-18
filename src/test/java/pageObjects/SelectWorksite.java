@@ -16,7 +16,7 @@ public class SelectWorksite extends BasePage {
     public void selectWorksites() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         WebElement managerField = wait.until(ExpectedConditions.presenceOfElementLocated(worksite));
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         managerField.click();
         List<WebElement> options = driver.findElements(By.xpath("//div[@id='rc_select_0_list']/following-sibling::div//div[@class='ant-select-item-option-content']"));
         Thread.sleep(1000);
