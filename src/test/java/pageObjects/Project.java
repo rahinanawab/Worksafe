@@ -11,7 +11,8 @@ import java.time.Duration;
 import java.util.*;
 
 public class Project extends BasePage {
-    private final By projecttab = By.xpath("//*[@aria-describedby='«rh»']");
+//    private final By projecttab = By.xpath("//*[@aria-describedby='«rh»']");
+    private final By projecttab = By.xpath("//div[@class='_MainSidecontainer_dyg2d_1']//div[@class='_NavigationIcon_dyg2d_23'][8]");
     private final By createProjectButton = By.xpath("//div[@class='_TabHeader_1vq1m_12']//div/button[3]");
     private final By projectname = By.xpath("//input[@placeholder='Enter Project Name']");
     private final By department = By.id("rc_select_1");
@@ -40,13 +41,16 @@ public class Project extends BasePage {
     private final By notificationDateTime = By.xpath("//input[@placeholder='Select Notification Date & Time']");
     private final By notificationtimeminute = By.xpath("//input[@placeholder='Enter Pre-Notification Time']");
     private final By uploadPhoto = By.xpath("(//input[@accept='.png,.jpg,.jpeg,.svg'])");
-    private final By uploadDoc = By.xpath("(//input[@accept='.pdf'])[1]");
-    private final By uploadSafetyDoc = By.xpath("(//input[@accept='.pdf'])[2]");
-    private final By uploadWarrentyDoc = By.xpath("(//input[@accept='.pdf'])[3]");
+    private final By uploadDoc = By.xpath("(//input[@accept='.pdf,.docx,.doc'])[1]");
+    private final By uploadSafetyDoc = By.xpath("(//input[@accept='.pdf,.docx,.doc'])[2]");
+    private final By uploadWarrentyDoc = By.xpath("(//input[@accept='.pdf,.docx,.doc'])[3]");
     private final By uploadTrainingDoc = By.xpath("(//input[@accept='.png,.jpg,.jpeg,.svg,.pdf'])[1]");
     private final By uploadPermitDoc = By.xpath("(//input[@accept='.png,.jpg,.jpeg,.svg,.pdf'])[2]");
     private final By circlemap = By.xpath("//div[@class='_PolyCard_1fzsm_250']//div[1]");
     private final By addprojectbutton = By.xpath("//button[normalize-space()='Add Project']");
+    private final By uploadSpacePaperwork = By.xpath("(//input[@accept='.pdf,.docx,.doc'])[4]");
+    private final By uploadJsa = By.xpath("(//input[@accept='.pdf,.docx,.doc'])[5]");
+    private final By addprojectbutton1 = By.xpath("//div[@class='ant-modal-body']//div//button[contains(text(),'Add Project')]");
     private final By optionproject = By.xpath("(//*[name()='svg'][@class='ant-dropdown-trigger'])[1]");
     private final By editprojectbutton = By.xpath("//button[normalize-space()='Save Project']");
 
@@ -354,8 +358,16 @@ public class Project extends BasePage {
         driver.findElement(addprojectbutton).click();
         Thread.sleep(1000);
     }
-
-
+    public void setUploadSpacePaperwork() {
+        driver.findElement(uploadSpacePaperwork).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
+    }
+    public void setUploadJsa() {
+        driver.findElement(uploadJsa).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
+    }
+    public void setAddprojectbutton1() throws InterruptedException {
+        driver.findElement(addprojectbutton1).click();
+        Thread.sleep(1000);
+    }
 public void optprojectview() throws InterruptedException {
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
     WebElement optview = wait.until(ExpectedConditions.presenceOfElementLocated(optionproject));

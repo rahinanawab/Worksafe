@@ -3,8 +3,8 @@ package TestCases;
 import org.testng.annotations.Test;
 import pageObjects.Asset;
 
-public class AssetTest extends BaseTest{
-    @Test(priority = 16, dependsOnMethods = "TestCases.LoginTest.testLogin")
+public class AssetTest extends BaseTest {
+    @Test(priority = 15, dependsOnMethods = "TestCases.LoginTest.testLogin")
     public void assets() throws InterruptedException {
         asset = new Asset();
         asset.setassettab();

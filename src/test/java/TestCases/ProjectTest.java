@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import pageObjects.Project;
 
 public class ProjectTest extends BaseTest {
-    @Test(priority = 12, dependsOnMethods = "TestCases.LoginTest.testLogin")
+    @Test(priority = 17, dependsOnMethods = "TestCases.LoginTest.testLogin")
     public void projects() throws InterruptedException {
         project = new Project();
         project.project();
@@ -25,6 +25,9 @@ public class ProjectTest extends BaseTest {
         project.setUploadPermitDoc();
         project.setCirclemap();
         project.setAddprojectbutton();
+        project.setUploadSpacePaperwork();
+        project.setUploadJsa();
+        project.setAddprojectbutton1();
 //        project.optprojectview();
 //        project.optprojectdel();
         project.optprojectedit();

@@ -11,8 +11,8 @@ public class Login extends BasePage {
     private final By loginButton = By.xpath("//button[@type='button']");
 
     public void navigateToLoginPage() {
-        driver.get("https://app.worksafemaps.com/");
-//        driver.get("https://work-safe-new-ui.vercel.app/");
+//        driver.get("https://app.worksafemaps.com/");
+        driver.get("https://work-safe-new-ui.vercel.app/");
     }
 
 //    public void acceptTermsAndContinue() {
@@ -33,7 +33,7 @@ public class Login extends BasePage {
     }
 
     public boolean isLoginSuccessful() {
-        return driver.getCurrentUrl().contains("https://app.worksafemaps.com/");
-//        return driver.getCurrentUrl().contains("https://work-safe-new-ui.vercel.app/");
+//        return driver.getCurrentUrl().contains("https://app.worksafemaps.com/");
+        return driver.getCurrentUrl().contains("https://work-safe-new-ui.vercel.app/");
     }
 }

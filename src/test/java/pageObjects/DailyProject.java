@@ -63,6 +63,9 @@ public class DailyProject extends BasePage{
     private final By uploadSafetyDoc = By.xpath("(//input[@accept='.pdf,.docx,.doc'])[2]");
     private final By uploadWarrentyDoc = By.xpath("(//input[@accept='.pdf,.docx,.doc'])[3]");
     private final By adddailyprojectbutton = By.xpath("//button[normalize-space()='Add Daily Project']");
+    private final By uploadSpacePaperwork = By.xpath("(//input[@accept='.pdf,.docx,.doc'])[4]");
+    private final By uploadJsa = By.xpath("(//input[@accept='.pdf,.docx,.doc'])[5]");
+    private final By adddailyprojectbutton1 = By.xpath("//div[@class='ant-modal-body']//div//button[contains(text(),'Add Daily Project')]");
     private final By optiondailyproject = By.xpath("(//*[name()='svg'][@class='ant-dropdown-trigger'])[1]");
     private final By editdailyprojectbutton = By.xpath("//button[normalize-space()='Save Daily Project']");
 
@@ -340,6 +343,17 @@ public class DailyProject extends BasePage{
     public void setAdddailyprojectbutton() throws InterruptedException {
         driver.findElement(adddailyprojectbutton).click();
         Thread.sleep(4000);
+    }
+
+    public void setUploadSpacePaperwork() {
+        driver.findElement(uploadSpacePaperwork).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
+    }
+    public void setUploadJsa() {
+        driver.findElement(uploadJsa).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
+    }
+    public void setAdddailyprojectbutton1() throws InterruptedException {
+        driver.findElement(adddailyprojectbutton1).click();
+        Thread.sleep(1000);
     }
 
     public void optdailyprojectview() throws InterruptedException {

@@ -12,14 +12,17 @@ public class SearchTeam extends BasePage{
         try {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
             Thread.sleep(7000);
-            driver.findElement(search).sendKeys("Test NEW WO 2");
+//            driver.findElement(search).sendKeys("Test NEW WO 2");
+            driver.findElement(search).sendKeys("Team");
         }
         catch(org.openqa.selenium.StaleElementReferenceException ex)
         {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
             Thread.sleep(7000);
 
-            driver.findElement(search).sendKeys("Test NEW WO 2");
+//            driver.findElement(search).sendKeys("Test NEW WO 2");
+            driver.findElement(search).sendKeys("Team");
+
         }
         Thread.sleep(4000);
     }

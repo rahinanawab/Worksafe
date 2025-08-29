@@ -15,14 +15,15 @@ import java.util.Set;
 
 public class Asset extends BasePage{
 
-    private final By assettab = By.xpath("//*[@aria-describedby='«rf»']");
+//    private final By assettab = By.xpath("//*[@aria-describedby='«rf»']");
+    private final By assettab = By.xpath("//div[@class='_MainSidecontainer_dyg2d_1']//div[@class='_NavigationIcon_dyg2d_23'][7]");
     private final By createAssetButton = By.xpath("//div[@class='_TabHeader_1vq1m_12']//div/button[3]");
     private final By assettype = By.id("rc_select_1");
     private final By department = By.id("rc_select_2");
     private final By elevationlevel = By.id("rc_select_3");
     private final By workorder = By.id("rc_select_5");
     private final By model = By.id("rc_select_4");
-    public final By date = By.xpath("//input[@placeholder='Select Date']");
+    private final By date = By.xpath("//input[@placeholder='Select Date']");
     private final By notificationDateTime = By.xpath("//input[@placeholder='Select Notification Date & Time']");
     private final By extradata = By.cssSelector("div[class='_FeildColLeft_e1z2y_224'] div[class='_AddExtraDataFeild_e1z2y_344']");
     private final By extradataname = By.xpath("//input[@placeholder='Name here']");

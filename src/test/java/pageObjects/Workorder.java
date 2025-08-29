@@ -10,7 +10,8 @@ import java.util.List;
 import java.util.Random;
 
 public class Workorder extends BasePage {
-    private final By wotab = By.xpath("//*[@aria-describedby='«rj»']");
+//    private final By wotab = By.xpath("//*[@aria-describedby='«rj»']");
+    private final By wotab = By.xpath("//div[@class='_MainSidecontainer_dyg2d_1']//div[@class='_NavigationIcon_dyg2d_23'][9]");
     private final By createwobButton = By.xpath("//div[@class='_TabHeader_1vq1m_12']//div/button[4]");
     public final By title = By.xpath("//input[@placeholder='Enter Title']");
     private final By priority = By.id("rc_select_2");
@@ -35,6 +36,7 @@ public class Workorder extends BasePage {
     private final By closeextradata = By.xpath("//button[@aria-label='Close']");
     private final By material = By.xpath("//input[@placeholder='Enter Material or Parts Ordered']");
     private final By workreq = By.xpath("//textarea[@placeholder='Enter Work requested']");
+    private final By jsatoggle = By.xpath("//button[@role='switch']");
     private final By uploadWarDoc = By.xpath("(//input[@accept='.pdf'])[1]");
     private final By uploadPhoto = By.xpath("(//input[@accept='.png,.jpg,.jpeg,.svg'])[1]");
     private final By uploadSafDoc = By.xpath("(//input[@accept='.pdf'])[2]");
@@ -219,6 +221,7 @@ public class Workorder extends BasePage {
 
         driver.findElement(material).sendKeys(getRandomString(6));
         driver.findElement(workreq).sendKeys(getRandomString(6));
+        driver.findElement(jsatoggle).click();
         driver.findElement(uploadWarDoc).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
         driver.findElement(uploadPhoto).sendKeys("C:\\Users\\Maze Digital\\Pictures\\Screenshots\\Screenshot 2025-07-08 164806.png");
         driver.findElement(uploadSafDoc).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
@@ -285,6 +288,9 @@ public class Workorder extends BasePage {
         optview.click();
         WebElement compwo = driver.findElement(By.xpath("//div[normalize-space()='Complete']"));
         compwo.click();
+        WebElement uploadjsa = driver.findElement(By.xpath("(//input[@accept='.pdf,.docx,.doc'])"));
+        uploadjsa.sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
+
         WebElement comp = driver.findElement(By.xpath("//button[normalize-space()='Save changes']"));
         comp.click();
     }

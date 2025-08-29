@@ -11,7 +11,8 @@ import java.util.List;
 import java.util.Random;
 
 public class CompanyStorage extends BasePage {
-    private final By companytab = By.xpath("//*[@aria-describedby='«r7»']");
+//    private final By companytab = By.xpath("//*[@aria-describedby='«r7»']");
+    private final By companytab = By.xpath("//div[@class='_MainSidecontainer_dyg2d_1']//div[@class='_NavigationIcon_dyg2d_23'][3]");
     private final By buystorageButton = By.xpath("//button[normalize-space()='Buy Storage']");
     private final By purchaseStorage = By.cssSelector(".ant-select-selection-item");
     private final By storageButton = By.xpath("//div[@class='_FooterContainer_15gea_283']//button[2]");

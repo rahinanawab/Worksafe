@@ -7,22 +7,24 @@ import pageObjects.*;
 public class BaseTest {
     protected Login loginPage;
     protected SelectWorksite selectWorksite;
+    protected Filter filter;
     protected SearchTeam searchTeam;
     protected AddTeam addTeam;
     protected RemoveTeam removeTeam;
     protected SearchUser searchUser;
     protected CompanyStorage companyStorage;
     protected CompanyLicense companyLicense;
-    protected SearchPoi searchPoi;
+    protected Payment payment;
     protected Poi poi;
-    protected Workorder workorder;
-    protected Project project;
-    protected SearchProject searchProject;
+    protected SearchPoi searchPoi;
     protected Alert alert;
     protected SearchAlert searchAlert;
     protected Asset asset;
     protected SearchAsset searchAsset;
+    protected Project project;
+    protected SearchProject searchProject;
     protected DailyProject dailyProject;
+    protected Workorder workorder;
     protected Logout logout;
 
     @BeforeSuite
@@ -30,22 +32,24 @@ public class BaseTest {
         BasePage.initializeDriver();
         loginPage = new Login();
         selectWorksite = new SelectWorksite();
+        filter = new Filter();
         searchTeam = new SearchTeam();
         addTeam = new AddTeam();
         removeTeam = new RemoveTeam();
         searchUser = new SearchUser();
         companyStorage = new CompanyStorage();
         companyLicense = new CompanyLicense();
-        searchPoi = new SearchPoi();
+        payment = new Payment();
         poi = new Poi();
-        workorder = new Workorder();
-        project = new Project();
-        searchProject = new SearchProject();
+        searchPoi = new SearchPoi();
         alert = new Alert();
         searchAlert = new SearchAlert();
         asset = new Asset();
         searchAsset = new SearchAsset();
+        project = new Project();
+        searchProject = new SearchProject();
         dailyProject = new DailyProject();
+        workorder = new Workorder();
         logout = new Logout();
     }
     @AfterSuite

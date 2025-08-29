@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class RemoveTeam extends BasePage{
     private final By removeteam = By.xpath("(//tr[contains(@class,'ant-table-row')][1]/td[3]//p)[1]");
-    private final By selectCheckbox = By.cssSelector("input.ant-checkbox-input");
+    private final By selectCheckboxes = By.cssSelector("input.ant-checkbox-input");
     private final By removeButton = By.xpath("//button[normalize-space()='Remove user']");
 
     public void removemember() throws InterruptedException {
@@ -22,7 +22,7 @@ public class RemoveTeam extends BasePage{
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", member);
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", member);
 
-        List<WebElement> checkboxes = driver.findElements(selectCheckbox);
+        List<WebElement> checkboxes = driver.findElements(selectCheckboxes);
         if (checkboxes.size() < 2) {
             System.out.println("Less than 2 checkboxes found!");
             return;

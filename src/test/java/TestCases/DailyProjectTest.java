@@ -3,8 +3,8 @@ package TestCases;
 import org.testng.annotations.Test;
 import pageObjects.DailyProject;
 
-public class DailyProjectTest extends BaseTest{
-    @Test(priority = 18, dependsOnMethods = "TestCases.LoginTest.testLogin")
+public class DailyProjectTest extends BaseTest {
+    @Test(priority = 19, dependsOnMethods = "TestCases.LoginTest.testLogin")
     public void dailyprojects() throws InterruptedException {
         dailyProject = new DailyProject();
         dailyProject.project();
@@ -19,6 +19,9 @@ public class DailyProjectTest extends BaseTest{
         dailyProject.setUploadSafetyDoc();
         dailyProject.setUploadWarrentyDoc();
         dailyProject.setAdddailyprojectbutton();
+        dailyProject.setUploadSpacePaperwork();
+        dailyProject.setUploadJsa();
+        dailyProject.setAdddailyprojectbutton1();
 //        dailyProject.optdailyprojectview();
 //        dailyProject.optdailyprojectdel();
         dailyProject.optdailyprojectedit();

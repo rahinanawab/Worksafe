@@ -8,13 +8,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
-import java.util.Set;
 
 public class Alert extends BasePage {
-    private final By alerttab = By.xpath("//*[@aria-describedby='«rd»']");
+//    private final By alerttab = By.xpath("//*[@aria-describedby='«rd»']");
+    private final By alerttab = By.xpath("//div[@class='_MainSidecontainer_dyg2d_1']//div[@class='_NavigationIcon_dyg2d_23'][6]");
     private final By createAlertButton = By.xpath("//div[@class='_TabHeader_1vq1m_12']//div/button[3]");
     private final By title = By.xpath("//input[@placeholder='Enter Title']");
     private final By threatlevel = By.id("rc_select_1");
