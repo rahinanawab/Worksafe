@@ -52,8 +52,8 @@ public class BaseTest {
         workorder = new Workorder();
         logout = new Logout();
     }
-    @AfterSuite
-    public void tearDownSuite() {
-        BasePage.quitDriver();
-    }
+//    @AfterSuite
+//    public void tearDownSuite() {
+//        BasePage.quitDriver();
+//    }
 }
