@@ -12,8 +12,13 @@ import java.util.Random;
 import java.time.Duration;
 
 public class AddTeam extends BasePage {
+<<<<<<< HEAD
     private final By addteamtab = By.xpath("//*[@aria-describedby='«r5»']");
 //    private final By addteamtab = By.xpath("//div[@class='_MainSidecontainer_dyg2d_1']//div[@class='_NavigationIcon_dyg2d_23'][1]");
+=======
+//    private final By addteamtab = By.xpath("//*[@aria-describedby='«r5»']");
+    private final By addteamtab = By.xpath("//div[@class='_MainSidecontainer_dyg2d_1']//div[@class='_NavigationIcon_dyg2d_23'][1]");
+>>>>>>> d8c0dd74b1fd5a0db1d8de1b7d6ede4313951d00
     private final By addmember = By.xpath("//div[@class='ant-dropdown-trigger']//*[name()='svg']");
     private final By member = By.xpath("//div[contains(text(),'Add member')]");
     private final By firstname = By.xpath("//input[@placeholder='Enter first name']");
@@ -39,6 +44,7 @@ public class AddTeam extends BasePage {
     }
 
     public void teamtab() throws InterruptedException {
+<<<<<<< HEAD
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
 //        Thread.sleep(2000);
 //        driver.findElement(addteamtab).click();
@@ -47,6 +53,11 @@ public class AddTeam extends BasePage {
         WebElement addteamField = wait.until(ExpectedConditions.presenceOfElementLocated(addteamtab));
         Thread.sleep(1000);
         addteamField.click();
+=======
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+        Thread.sleep(2000);
+        driver.findElement(addteamtab).click();
+>>>>>>> d8c0dd74b1fd5a0db1d8de1b7d6ede4313951d00
 
     }
     public void addmember() throws InterruptedException {

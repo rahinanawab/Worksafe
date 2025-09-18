@@ -54,11 +54,19 @@
             <artifactId>selenium-devtools</artifactId>
             <version>4.0.0-beta-4</version>
         </dependency>
+<<<<<<< HEAD
 <!--        <dependency>-->
 <!--            <groupId>org.seleniumhq.selenium</groupId>-->
 <!--            <artifactId>selenium-devtools-v140</artifactId>-->
 <!--            <version>4.35.0</version>-->
 <!--        </dependency>-->
+=======
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-devtools-v138</artifactId>
+            <version>4.34.0</version>
+        </dependency>
+>>>>>>> d8c0dd74b1fd5a0db1d8de1b7d6ede4313951d00
 
 
     </dependencies>

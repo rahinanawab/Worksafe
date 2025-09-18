@@ -13,6 +13,7 @@ import java.util.Random;
 
 public class Filter extends BasePage{
 
+<<<<<<< HEAD
     private final By searchicon = By.cssSelector("._SearchIcon_1qka8_119");
     private final By filtericon = By.cssSelector("div[class='_HeaderSearch_1qka8_138'] button");
     private final By selectCheckbox = By.xpath("(//input[@type='checkbox'])[position() <= 5]");
@@ -20,14 +21,28 @@ public class Filter extends BasePage{
     private final By enddate = By.xpath("(//input[@placeholder='Select date'])[2]");
     private final By maploc = By.cssSelector("body > div:nth-child(3) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1)");
     private final By maploc1 = By.cssSelector("body > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)");
+=======
+    private final By searchicon = By.cssSelector("._SearchIcon_xwxtq_84");
+    private final By filtericon = By.cssSelector("div[class='_HeaderSearch_xwxtq_103'] button");
+    private final By selectCheckbox = By.xpath("(//input[@type='checkbox'])[position() <= 5]");
+    private final By startdate = By.xpath("(//input[@placeholder='Select date'])[1]");
+    private final By enddate = By.xpath("(//input[@placeholder='Select date'])[2]");
+    private final By maploc = By.cssSelector("body > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)");
+    private final By maploc1 = By.cssSelector("body > div:nth-child(6) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1)");
+>>>>>>> d8c0dd74b1fd5a0db1d8de1b7d6ede4313951d00
     private final By crossbutton = By.xpath("(//button[@aria-label='Custom Close Button'])[2]");
     private final By selectCheckbox1 = By.xpath("(//input[@type='checkbox'])[position() >= 6 and position() <= 8]");
     private final By applyfilterbutton = By.xpath("//button[normalize-space()='Apply Filter']");
     private final By crossbutton1 = By.xpath("(//button[@aria-label='Custom Close Button'])[1]");
 
+<<<<<<< HEAD
     public void filtertab() throws InterruptedException {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
         Thread.sleep(1000);
+=======
+    public void filtertab() {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+>>>>>>> d8c0dd74b1fd5a0db1d8de1b7d6ede4313951d00
         driver.findElement(searchicon).click();
     }
 
@@ -82,6 +97,7 @@ public class Filter extends BasePage{
         System.out.println("Date and time selected successfully!");
         Thread.sleep(1000);
 
+<<<<<<< HEAD
 //        driver.findElement(maploc).click();
 //        Thread.sleep(1000);
 //
@@ -90,6 +106,16 @@ public class Filter extends BasePage{
 //
 //        driver.findElement(crossbutton).click();
 //        Thread.sleep(1000);
+=======
+        driver.findElement(maploc).click();
+        Thread.sleep(1000);
+
+        driver.findElement(maploc1).click();
+        Thread.sleep(1000);
+
+        driver.findElement(crossbutton).click();
+        Thread.sleep(1000);
+>>>>>>> d8c0dd74b1fd5a0db1d8de1b7d6ede4313951d00
 
         List<WebElement> checkboxes1 = driver.findElements(selectCheckbox1);
         if (checkboxes1.size() < 2) {
@@ -114,8 +140,11 @@ public class Filter extends BasePage{
         Thread.sleep(2000);
 
         driver.findElement(crossbutton1).click();
+<<<<<<< HEAD
         Thread.sleep(2000);
 
+=======
+>>>>>>> d8c0dd74b1fd5a0db1d8de1b7d6ede4313951d00
 
     }
 }
