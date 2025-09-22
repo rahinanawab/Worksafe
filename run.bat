@@ -1,2 +1,2 @@
-C:\Users\Maze Digital\IdeaProjects\TestingWorksafe
+C:\Users\Administrator\IdeaProjects\TestingWorksafe
 mvn test
