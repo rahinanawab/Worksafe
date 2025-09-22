@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="AppTestSuite" >
+    <test name="CompleteAppTest">
+        <classes>
+            <class name="TestCases.LoginTest"/>
+            <class name="TestCases.SelectWorksiteTest"/>
+            <class name="TestCases.FilterTest"/>
+            <class name="TestCases.AddTeamTest"/>
+            <class name="TestCases.SearchTeamTest"/>
+            <class name="TestCases.RemoveTeamTest"/>
+            <class name="TestCases.SearchUserTest"/>
+            <class name="TestCases.CompanyStorageTest"/>
+            <class name="TestCases.CompanyLicenseTest"/>
+            <class name="TestCases.PaymentTest"/>
+            <class name="TestCases.PoiTest"/>
+            <class name="TestCases.SearchPoiTest"/>
+            <class name="TestCases.AlertTest"/>
+            <class name="TestCases.SearchAlertTest"/>
+            <class name="TestCases.AssetTest"/>
+            <class name="TestCases.SearchAssetTest"/>
+            <class name="TestCases.ProjectTest"/>
+            <class name="TestCases.SearchProjectTest"/>
+            <class name="TestCases.DailyProjectTest"/>
+            <class name="TestCases.WorkorderTest"/>
+            <class name="TestCases.LogoutTest"/>
+        </classes>
+    </test>
+</suite>
