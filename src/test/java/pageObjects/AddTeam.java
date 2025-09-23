@@ -19,14 +19,27 @@ public class AddTeam extends BasePage {
     private final By firstname = By.xpath("//input[@placeholder='Enter first name']");
     private final By lastname = By.xpath("//input[@placeholder='Enter last name']");
     private final By email = By.xpath("//input[@placeholder='Enter email']");
+    private final By position = By.xpath("//input[@placeholder='Enter position']");
+    private final By phone = By.xpath("//input[@placeholder='Enter phone']");
+    private final By Officephone = By.xpath("//input[@placeholder='Enter office phone']");
     private final By role = By.id("rc_select_1");
     private final By manager = By.id("rc_select_2");
     private final By adduserbutton = By.xpath("//button[normalize-space()='Add user']");
+    private final By search = By.xpath("//input[@placeholder='Search team']");
 
     private final Random random = new Random();
 
     private String getRandomString(int length) {
         String characters = "abcdefghijklmnopqrstuvwxyz";
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < length; i++) {
+            result.append(characters.charAt(random.nextInt(characters.length())));
+        }
+        return result.toString();
+    }
+
+    private String getRandomnumber(int length) {
+        String characters = "1234567890";
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < length; i++) {
             result.append(characters.charAt(random.nextInt(characters.length())));
@@ -43,6 +56,25 @@ public class AddTeam extends BasePage {
         Thread.sleep(2000);
         driver.findElement(addteamtab).click();
 
+    }
+
+
+    public void searchteam() throws InterruptedException {
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+
+        try {
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+            Thread.sleep(7000);
+            driver.findElement(search).sendKeys("New team peace");
+        }
+        catch(org.openqa.selenium.StaleElementReferenceException ex)
+        {
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+            Thread.sleep(7000);
+            driver.findElement(search).sendKeys("New team peace");
+
+        }
+        Thread.sleep(4000);
     }
     public void addmember() throws InterruptedException {
         driver.findElement(addmember).click();
@@ -62,6 +94,12 @@ public class AddTeam extends BasePage {
         driver.findElement(lastname).sendKeys(getRandomString(6));
 
         driver.findElement(email).sendKeys(getRandomEmail());
+
+        driver.findElement(position).sendKeys(getRandomString(6));
+
+        driver.findElement(phone).sendKeys(getRandomnumber(11));
+
+        driver.findElement(Officephone).sendKeys(getRandomnumber(11));
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         WebElement roleField = wait.until(ExpectedConditions.presenceOfElementLocated(role));

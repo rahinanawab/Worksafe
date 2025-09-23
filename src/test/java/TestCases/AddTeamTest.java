@@ -8,6 +8,7 @@ public class AddTeamTest extends BaseTest {
         public void addteam() throws InterruptedException {
             addTeam = new AddTeam();
             addTeam.teamtab();
+            addTeam.searchteam();
             addTeam.addmember();
         }
 }

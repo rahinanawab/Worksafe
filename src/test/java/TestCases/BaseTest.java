@@ -8,7 +8,6 @@ public class BaseTest {
     protected Login loginPage;
     protected SelectWorksite selectWorksite;
     protected Filter filter;
-    protected SearchTeam searchTeam;
     protected AddTeam addTeam;
     protected RemoveTeam removeTeam;
     protected SearchUser searchUser;
@@ -33,7 +32,6 @@ public class BaseTest {
         loginPage = new Login();
         selectWorksite = new SelectWorksite();
         filter = new Filter();
-        searchTeam = new SearchTeam();
         addTeam = new AddTeam();
         removeTeam = new RemoveTeam();
         searchUser = new SearchUser();

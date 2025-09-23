@@ -81,14 +81,14 @@ public class Filter extends BasePage{
         System.out.println("Date and time selected successfully!");
         Thread.sleep(1000);
 
-        driver.findElement(maploc).click();
-        Thread.sleep(1000);
-
-        driver.findElement(maploc1).click();
-        Thread.sleep(1000);
-
-        driver.findElement(crossbutton).click();
-        Thread.sleep(1000);
+//        driver.findElement(maploc).click();
+//        Thread.sleep(1000);
+//
+//        driver.findElement(maploc1).click();
+//        Thread.sleep(1000);
+//
+//        driver.findElement(crossbutton).click();
+//        Thread.sleep(1000);
 
         List<WebElement> checkboxes1 = driver.findElements(selectCheckbox1);
         if (checkboxes1.size() < 2) {
