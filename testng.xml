@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="AppTestSuite" >
+<suite name="AppTestSuite" parallel="tests" thread-count="2">
     <test name="CompleteAppTest">
         <classes>
             <class name="TestCases.LoginTest"/>
             <class name="TestCases.SelectWorksiteTest"/>
-<!--            <class name="TestCases.FilterTest"/>-->
+            <class name="TestCases.FilterTest"/>
             <class name="TestCases.AddTeamTest"/>
             <class name="TestCases.RemoveTeamTest"/>
-<!--            <class name="TestCases.SearchUserTest"/>-->
+            <class name="TestCases.SearchUserTest"/>
 <!--            <class name="TestCases.CompanyStorageTest"/>-->
 <!--            <class name="TestCases.CompanyLicenseTest"/>-->
 <!--            <class name="TestCases.PaymentTest"/>-->

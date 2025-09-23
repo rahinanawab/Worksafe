@@ -8,6 +8,6 @@ public class SearchUserTest extends BaseTest {
         public void testSearchUser() throws InterruptedException {
                 searchUser = new SearchUser();
                 searchUser.users();
-            searchUser.enterEmailsearch("comptestnew1@yopmail.com");
+            searchUser.enterEmailsearch("peace@yopmail.com");
         }
 }

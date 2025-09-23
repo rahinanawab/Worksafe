@@ -69,7 +69,7 @@ public class Filter extends BasePage{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 
         WebElement date = wait.until(ExpectedConditions.elementToBeClickable(
-                By.xpath("//td[@class='ant-picker-cell ant-picker-cell-in-view']//div[@class='ant-picker-cell-inner'][normalize-space()='12']")));
+                By.xpath("//td[@class='ant-picker-cell ant-picker-cell-in-view']//div[@class='ant-picker-cell-inner'][normalize-space()='1']")));
         date.click();
         System.out.println("Date and time selected successfully!");
         Thread.sleep(1000);
@@ -113,6 +113,8 @@ public class Filter extends BasePage{
         Thread.sleep(2000);
 
         driver.findElement(crossbutton1).click();
+        Thread.sleep(2000);
+
 
     }
 }

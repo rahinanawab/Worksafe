@@ -8,7 +8,8 @@ import java.time.Duration;
 
 public class CompanyLicense extends BasePage{
 //    private final By companytab = By.xpath("//*[@aria-describedby='«r7»']");
-private final By companytab = By.xpath("//div[@class='_MainSidecontainer_dyg2d_1']//div[@class='_NavigationIcon_dyg2d_23'][3]");
+private final By companytab = By.cssSelector("div[class='_sideBarScroller_123ft_14'] div:nth-child(3)");
+
     private final By buylicenseButton = By.xpath("//button[normalize-space()='Buy License']");
     private final By licenseno = By.xpath("//input[@placeholder='Please select number how many license you want to buy']");
     private final By licenseButton = By.xpath("//div[@class='_FooterContainer_15gea_283']//button[2]");
