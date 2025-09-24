@@ -6,7 +6,7 @@ import java.time.Duration;
 
 public class SearchUser extends BasePage {
 
-//    private final By userstab = By.xpath("//*[@aria-describedby='«r5»']");
+//    private final By userstab = By.xpath("//*[@aria-describedby='«r7»']");
 private final By userstab = By.cssSelector("div[class='_sideBarScroller_123ft_14'] div:nth-child(2)");
 
     private final By searchemailField = By.xpath("//input[@placeholder='Search user']");
@@ -16,8 +16,10 @@ private final By userstab = By.cssSelector("div[class='_sideBarScroller_123ft_14
         Thread.sleep(1000);
         driver.findElement(userstab).click();
     }
-    public void enterEmailsearch(String email) {
+    public void enterEmailsearch(String email) throws InterruptedException {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
         driver.findElement(searchemailField).sendKeys(email);
+        Thread.sleep(3000);
+
     }
 }

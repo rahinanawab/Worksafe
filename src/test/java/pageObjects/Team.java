@@ -6,12 +6,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
 import java.time.Duration;
 
-public class AddTeam extends BasePage {
+public class Team extends BasePage {
 //    private final By addteamtab = By.xpath("//*[@aria-describedby='«r5»']");
     private final By addteamtab = By.cssSelector("div[class='_sideBarScroller_123ft_14'] div:nth-child(1)");
     private final By addmember = By.xpath("//div[@class='ant-dropdown-trigger']//*[name()='svg']");
@@ -26,6 +27,13 @@ public class AddTeam extends BasePage {
     private final By manager = By.id("rc_select_2");
     private final By adduserbutton = By.xpath("//button[normalize-space()='Add user']");
     private final By search = By.xpath("//input[@placeholder='Search team']");
+
+
+    private final By removeteam = By.xpath("(//tr[contains(@class,'ant-table-row')][1]/td[3]//p)[1]");
+    private final By selectCheckboxes = By.cssSelector("input.ant-checkbox-input");
+    private final By removeButton = By.xpath("//button[normalize-space()='Remove user']");
+
+
 
     private final Random random = new Random();
 
@@ -134,4 +142,5 @@ public class AddTeam extends BasePage {
         driver.findElement(adduserbutton).click();
         Thread.sleep(2000);
     }
+
 }

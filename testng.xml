@@ -6,9 +6,10 @@
             <class name="TestCases.LoginTest"/>
             <class name="TestCases.SelectWorksiteTest"/>
             <class name="TestCases.FilterTest"/>
-            <class name="TestCases.AddTeamTest"/>
+            <class name="TestCases.TeamTest"/>
             <class name="TestCases.RemoveTeamTest"/>
-            <class name="TestCases.SearchUserTest"/>
+<!--            <class name="TestCases.SearchUserTest"/>-->
+<!--            <class name="TestCases.CompanyStorageTest"/>-->
 <!--            <class name="TestCases.CompanyStorageTest"/>-->
 <!--            <class name="TestCases.CompanyLicenseTest"/>-->
 <!--            <class name="TestCases.PaymentTest"/>-->

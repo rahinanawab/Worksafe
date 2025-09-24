@@ -1,6 +1,5 @@
 package TestCases;
 
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import pageObjects.*;
 
@@ -8,7 +7,7 @@ public class BaseTest {
     protected Login loginPage;
     protected SelectWorksite selectWorksite;
     protected Filter filter;
-    protected AddTeam addTeam;
+    protected Team team;
     protected RemoveTeam removeTeam;
     protected SearchUser searchUser;
     protected CompanyStorage companyStorage;
@@ -32,7 +31,7 @@ public class BaseTest {
         loginPage = new Login();
         selectWorksite = new SelectWorksite();
         filter = new Filter();
-        addTeam = new AddTeam();
+        team = new Team();
         removeTeam = new RemoveTeam();
         searchUser = new SearchUser();
         companyStorage = new CompanyStorage();
