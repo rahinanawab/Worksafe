@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import pageObjects.DailyProject;
 
 public class DailyProjectTest extends BaseTest {
-    @Test(priority = 19, dependsOnMethods = "TestCases.LoginTest.testLogin")
+    @Test(priority = 12, dependsOnMethods = "TestCases.LoginTest.testLogin")
     public void dailyprojects() throws InterruptedException {
         dailyProject = new DailyProject();
         dailyProject.project();

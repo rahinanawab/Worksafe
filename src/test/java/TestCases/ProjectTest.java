@@ -4,17 +4,18 @@ import org.testng.annotations.Test;
 import pageObjects.Project;
 
 public class ProjectTest extends BaseTest {
-    @Test(priority = 17, dependsOnMethods = "TestCases.LoginTest.testLogin")
+    @Test(priority = 11, dependsOnMethods = "TestCases.LoginTest.testLogin")
     public void projects() throws InterruptedException {
         project = new Project();
         project.project();
+        project.searchproject();
         project.createButton();
         project.dept();
         project.elevation();
         project.wo();
         project.projman();
         project.con();
-//        project.exdata();
+        project.exdata();
         project.notificationdatetime();
         project.noticationtimemint();
         project.setUploadPhoto();

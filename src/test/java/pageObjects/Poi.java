@@ -13,13 +13,12 @@ import java.util.Set;
 
 public class Poi extends BasePage {
 //    private final By poitab = By.xpath("//*[@aria-describedby='«rb»']");
-//    private final By poitab = By.xpath("//div[@class='_MainSidecontainer_dyg2d_1']//div[@class='_NavigationIcon_dyg2d_23'][5]");
-
     private final By poitab = By.cssSelector("div[class='_sideBarScroller_123ft_14'] div:nth-child(5)");
     private final By createPOIButton = By.xpath("//div[@class='_TabHeader_1vq1m_12']//div/button[4]");
     private final By title = By.xpath("//input[@placeholder='Enter Title']");
     private final By threatlevel = By.id("rc_select_1");
     private final By elevationlevel = By.id("rc_select_2");
+    private final By workorder = By.id("rc_select_3");
     private final By notificationtitle = By.xpath("//input[@placeholder='Enter Notification Title']");
     private final By notificationtimeminute = By.xpath("//input[@placeholder='Enter Pre-Notification Time']");
     private final By extradata = By.cssSelector("._AddExtraDataFeild_1huat_344");
@@ -113,6 +112,21 @@ public class Poi extends BasePage {
             }
             Thread.sleep(500);
         }
+
+            WebElement workorderfield = wait.until(ExpectedConditions.presenceOfElementLocated(workorder));
+            Thread.sleep(1000);
+            workorderfield.click();
+            List<WebElement> options2 = driver.findElements(By.xpath("//div[@id='rc_select_3_list']/following-sibling::div//div[@class='ant-select-item-option-content']"));
+            if (!options2.isEmpty()) {
+                Random rand2 = new Random();
+                int randomIndex = rand2.nextInt(options2.size());
+                options2.get(randomIndex).click();
+                System.out.println("Selected option index of workorder: " + randomIndex);
+            } else {
+                System.out.println("No options found.");
+            }
+
+
         driver.findElement(notificationtitle).sendKeys(getRandomString(6));
         driver.findElement(notificationtimeminute).sendKeys("5");
         driver.findElement(extradata).click();
@@ -125,12 +139,12 @@ public class Poi extends BasePage {
         extradatas.click();
 
 
-        List<WebElement> options2 = driver.findElements(By.xpath("//li//span//div"));
+        List<WebElement> options3 = driver.findElements(By.xpath("//li//span//div"));
 
-        if (!options2.isEmpty()) {
+        if (!options3.isEmpty()) {
             Random rand1 = new Random();
-            int randomIndex = rand1.nextInt(options2.size());
-            WebElement selectedOption = options2.get(randomIndex);
+            int randomIndex = rand1.nextInt(options3.size());
+            WebElement selectedOption = options3.get(randomIndex);
             String selectedText = selectedOption.getText().toLowerCase().trim();
             selectedOption.click();
             System.out.println("Selected option index: " + randomIndex);
@@ -162,21 +176,22 @@ public class Poi extends BasePage {
                     todaydate.click();
                     break;
                 case "color":
-        WebElement colorPickerTrigger = driver.findElement(By.xpath("//div[contains(@class,'ant-color-picker-trigger')]"));
-        colorPickerTrigger.click();
-        Thread.sleep(500);
-        WebElement rInput = driver.findElement(By.xpath("(//div[@class='ant-color-picker-rgb-input']//input)[1]"));
-        WebElement gInput = driver.findElement(By.xpath("(//div[@class='ant-color-picker-rgb-input']//input)[2]"));
-        WebElement bInput = driver.findElement(By.xpath("(//div[@class='ant-color-picker-rgb-input']//input)[3]"));
-        rInput.clear();
-        rInput.sendKeys("104");
-        gInput.clear();
-        gInput.sendKeys("12");
-        bInput.clear();
-        bInput.sendKeys("12");
-        colorPickerTrigger.click();
-        System.out.println("RGB color set to rgb(104, 12, 12)");
-        break;
+                    WebElement colorPickerTrigger = driver.findElement(By.xpath("//div[contains(@class,'ant-color-picker-trigger')]"));
+                    colorPickerTrigger.click();
+                    Thread.sleep(500);
+                    WebElement rInput = driver.findElement(By.xpath("(//div[@class='ant-color-picker-rgb-input']//input)[1]"));
+                    WebElement gInput = driver.findElement(By.xpath("(//div[@class='ant-color-picker-rgb-input']//input)[2]"));
+                    WebElement bInput = driver.findElement(By.xpath("(//div[@class='ant-color-picker-rgb-input']//input)[3]"));
+                    rInput.clear();
+                    rInput.sendKeys("104");
+                    gInput.clear();
+                    gInput.sendKeys("12");
+                    bInput.clear();
+                    bInput.sendKeys("12");
+                    colorPickerTrigger.click();
+                    System.out.println("RGB color set to rgb(104, 12, 12)");
+                    break;
+
                 default:
                     System.out.println("Unknown option selected: " + selectedText);
             }

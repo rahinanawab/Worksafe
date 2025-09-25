@@ -12,7 +12,7 @@ import java.time.Duration;
 import java.util.*;
 
 public class DailyProject extends BasePage{
-    private final By projecttab = By.xpath("//*[@aria-describedby='«rh»']");
+    private final By projecttab = By.cssSelector("div[class='_sideBarScroller_123ft_14'] div:nth-child(8)");
     private final By optionproject = By.xpath("(//*[name()='svg'][@class='ant-dropdown-trigger'])[1]");
     private final By dailyproject = By.xpath("(//div[@class='_FeildColLeft_e1z2y_224']//div[@class='_AddExtraDataFeild_e1z2y_344'])[2]");
     private final By createdailyProjectButton = By.xpath("//div[@class='_TabHeader_1vq1m_12']//div/button[2]");
@@ -325,19 +325,19 @@ public class DailyProject extends BasePage{
     }
 
     public void setUploadPhoto() {
-        driver.findElement(uploadPhoto).sendKeys("C:\\Users\\Maze Digital\\Pictures\\Screenshots\\Screenshot 2025-07-14 203433.png");
+        driver.findElement(uploadPhoto).sendKeys("C:\\Users\\Administrator\\Pictures\\Screenshots\\Screenshot 2025-09-22 060314.png");
     }
 
     public void setUploadDoc() {
-        driver.findElement(uploadDoc).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
+        driver.findElement(uploadDoc).sendKeys("C:\\Users\\Administrator\\Documents\\Dummy.pdf");
     }
 
     public void setUploadSafetyDoc() {
-        driver.findElement(uploadSafetyDoc).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
+        driver.findElement(uploadSafetyDoc).sendKeys("C:\\Users\\Administrator\\Documents\\Dummy.pdf");
     }
 
     public void setUploadWarrentyDoc() {
-        driver.findElement(uploadWarrentyDoc).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
+        driver.findElement(uploadWarrentyDoc).sendKeys("C:\\Users\\Administrator\\Documents\\Dummy.pdf");
     }
 
     public void setAdddailyprojectbutton() throws InterruptedException {
@@ -346,10 +346,10 @@ public class DailyProject extends BasePage{
     }
 
     public void setUploadSpacePaperwork() {
-        driver.findElement(uploadSpacePaperwork).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
+        driver.findElement(uploadSpacePaperwork).sendKeys("C:\\Users\\Administrator\\Documents\\Dummy.pdf");
     }
     public void setUploadJsa() {
-        driver.findElement(uploadJsa).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
+        driver.findElement(uploadJsa).sendKeys("C:\\Users\\Administrator\\Documents\\Dummy.pdf");
     }
     public void setAdddailyprojectbutton1() throws InterruptedException {
         driver.findElement(adddailyprojectbutton1).click();

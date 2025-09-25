@@ -8,18 +8,15 @@
             <class name="TestCases.FilterTest"/>
             <class name="TestCases.TeamTest"/>
             <class name="TestCases.UsersTest"/>
-<!--            <class name="TestCases.CompanyTest"/>-->
+            <class name="TestCases.CompanyTest"/>
             <class name="TestCases.PaymentTest"/>
             <class name="TestCases.PoiTest"/>
-<!--            <class name="TestCases.AlertTest"/>-->
-<!--            <class name="TestCases.SearchAlertTest"/>-->
-<!--            <class name="TestCases.AssetTest"/>-->
-<!--            <class name="TestCases.SearchAssetTest"/>-->
-<!--            <class name="TestCases.ProjectTest"/>-->
-<!--            <class name="TestCases.SearchProjectTest"/>-->
-<!--            <class name="TestCases.DailyProjectTest"/>-->
-<!--            <class name="TestCases.WorkorderTest"/>-->
-<!--            <class name="TestCases.LogoutTest"/>-->
+            <class name="TestCases.AlertTest"/>
+            <class name="TestCases.AssetTest"/>
+            <class name="TestCases.ProjectTest"/>
+            <class name="TestCases.DailyProjectTest"/>
+            <class name="TestCases.WorkorderTest"/>
+            <class name="TestCases.LogoutTest"/>
         </classes>
     </test>
 </suite>

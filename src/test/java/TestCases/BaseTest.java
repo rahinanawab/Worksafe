@@ -13,11 +13,8 @@ public class BaseTest {
     protected Payment payment;
     protected Poi poi;
     protected Alert alert;
-    protected SearchAlert searchAlert;
     protected Asset asset;
-    protected SearchAsset searchAsset;
     protected Project project;
-    protected SearchProject searchProject;
     protected DailyProject dailyProject;
     protected Workorder workorder;
     protected Logout logout;
@@ -34,11 +31,8 @@ public class BaseTest {
         payment = new Payment();
         poi = new Poi();
         alert = new Alert();
-        searchAlert = new SearchAlert();
         asset = new Asset();
-        searchAsset = new SearchAsset();
         project = new Project();
-        searchProject = new SearchProject();
         dailyProject = new DailyProject();
         workorder = new Workorder();
         logout = new Logout();

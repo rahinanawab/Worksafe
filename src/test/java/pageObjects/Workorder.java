@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class Workorder extends BasePage {
 //    private final By wotab = By.xpath("//*[@aria-describedby='«rj»']");
-    private final By wotab = By.xpath("//div[@class='_MainSidecontainer_dyg2d_1']//div[@class='_NavigationIcon_dyg2d_23'][9]");
+private final By wotab = By.cssSelector("div[class='_sideBarScroller_123ft_14'] div:nth-child(9)");
     private final By createwobButton = By.xpath("//div[@class='_TabHeader_1vq1m_12']//div/button[4]");
     public final By title = By.xpath("//input[@placeholder='Enter Title']");
     private final By priority = By.id("rc_select_2");
@@ -48,6 +48,7 @@ public class Workorder extends BasePage {
     private final By assignedtome = By.xpath("//button[normalize-space()='Assign To Me']");
     private final By optionwo = By.xpath("(//*[name()='svg'][@class='ant-dropdown-trigger'])[1]");
     private final By editwobutton = By.xpath("//button[normalize-space()='Save work order']");
+    private final By search_wo = By.xpath("//input[@id='ListSearch']");
 
 
     private final Random random = new Random();
@@ -70,7 +71,21 @@ public class Workorder extends BasePage {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.findElement(wotab).click();
     }
+    public void searchworkorder() throws InterruptedException {
+        try {
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+            Thread.sleep(7000);
+            driver.findElement(search_wo).sendKeys("wo");
+        }
+        catch(org.openqa.selenium.StaleElementReferenceException ex)
+        {
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+            Thread.sleep(7000);
 
+            driver.findElement(search_wo).sendKeys("wo");
+        }
+        Thread.sleep(4000);
+    }
     public void createWoButton() throws InterruptedException {
         driver.findElement(createwobButton).click();
         Thread.sleep(1000);
@@ -222,9 +237,9 @@ public class Workorder extends BasePage {
         driver.findElement(material).sendKeys(getRandomString(6));
         driver.findElement(workreq).sendKeys(getRandomString(6));
         driver.findElement(jsatoggle).click();
-        driver.findElement(uploadWarDoc).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
-        driver.findElement(uploadPhoto).sendKeys("C:\\Users\\Maze Digital\\Pictures\\Screenshots\\Screenshot 2025-07-08 164806.png");
-        driver.findElement(uploadSafDoc).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
+        driver.findElement(uploadWarDoc).sendKeys("C:\\Users\\Administrator\\Documents\\Dummy.pdf");
+        driver.findElement(uploadPhoto).sendKeys("C:\\Users\\Administrator\\Pictures\\Screenshots\\Screenshot 2025-09-22 060314.png");
+        driver.findElement(uploadSafDoc).sendKeys("C:\\Users\\Administrator\\Documents\\Dummy.pdf");
         driver.findElement(email).sendKeys(getRandomEmail());
         driver.findElement(addemailbutton).click();
         driver.findElement(circlemap).click();
@@ -289,7 +304,7 @@ public class Workorder extends BasePage {
         WebElement compwo = driver.findElement(By.xpath("//div[normalize-space()='Complete']"));
         compwo.click();
         WebElement uploadjsa = driver.findElement(By.xpath("(//input[@accept='.pdf,.docx,.doc'])"));
-        uploadjsa.sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
+        uploadjsa.sendKeys("C:\\Users\\Administrator\\Documents\\Dummy.pdf");
 
         WebElement comp = driver.findElement(By.xpath("//button[normalize-space()='Save changes']"));
         comp.click();

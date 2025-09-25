@@ -12,7 +12,7 @@ import java.util.*;
 
 public class Project extends BasePage {
 //    private final By projecttab = By.xpath("//*[@aria-describedby='«rh»']");
-    private final By projecttab = By.xpath("//div[@class='_MainSidecontainer_dyg2d_1']//div[@class='_NavigationIcon_dyg2d_23'][8]");
+private final By projecttab = By.cssSelector("div[class='_sideBarScroller_123ft_14'] div:nth-child(8)");
     private final By createProjectButton = By.xpath("//div[@class='_TabHeader_1vq1m_12']//div/button[3]");
     private final By projectname = By.xpath("//input[@placeholder='Enter Project Name']");
     private final By department = By.id("rc_select_1");
@@ -53,6 +53,7 @@ public class Project extends BasePage {
     private final By addprojectbutton1 = By.xpath("//div[@class='ant-modal-body']//div//button[contains(text(),'Add Project')]");
     private final By optionproject = By.xpath("(//*[name()='svg'][@class='ant-dropdown-trigger'])[1]");
     private final By editprojectbutton = By.xpath("//button[normalize-space()='Save Project']");
+    private final By search_project = By.xpath("//input[@id='ListSearch']");
 
     private final Random random = new Random();
 
@@ -93,12 +94,25 @@ public class Project extends BasePage {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.findElement(projecttab).click();
     }
+    public void searchproject() throws InterruptedException {
+        try {
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+            Thread.sleep(7000);
+            driver.findElement(search_project).sendKeys("gtftfft");
+        }
+        catch(org.openqa.selenium.StaleElementReferenceException ex)
+        {
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+            Thread.sleep(7000);
 
+            driver.findElement(search_project).sendKeys("gtftfft");
+        }
+        Thread.sleep(4000);
+    }
     public void createButton() throws InterruptedException {
         driver.findElement(createProjectButton).click();
         driver.findElement(projectname).sendKeys(getRandomString(6));
     }
-
     public void dept() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         WebElement departmentfield = wait.until(ExpectedConditions.presenceOfElementLocated(department));
@@ -327,27 +341,27 @@ public class Project extends BasePage {
     }
 
     public void setUploadPhoto() {
-        driver.findElement(uploadPhoto).sendKeys("C:\\Users\\Maze Digital\\Pictures\\Screenshots\\Screenshot 2025-07-14 203433.png");
+        driver.findElement(uploadPhoto).sendKeys("C:\\Users\\Administrator\\Pictures\\Screenshots\\Screenshot 2025-09-22 060314.png");
     }
 
     public void setUploadDoc() {
-        driver.findElement(uploadDoc).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
+        driver.findElement(uploadDoc).sendKeys("C:\\Users\\Administrator\\Documents\\Dummy.pdf");
     }
 
     public void setUploadSafetyDoc() {
-        driver.findElement(uploadSafetyDoc).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
+        driver.findElement(uploadSafetyDoc).sendKeys("C:\\Users\\Administrator\\Documents\\Dummy.pdf");
     }
 
     public void setUploadWarrentyDoc() {
-        driver.findElement(uploadWarrentyDoc).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
+        driver.findElement(uploadWarrentyDoc).sendKeys("C:\\Users\\Administrator\\Documents\\Dummy.pdf");
     }
 
     public void setUploadTrainingDoc() {
-        driver.findElement(uploadTrainingDoc).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
+        driver.findElement(uploadTrainingDoc).sendKeys("C:\\Users\\Administrator\\Documents\\Dummy.pdf");
     }
 
     public void setUploadPermitDoc() {
-        driver.findElement(uploadPermitDoc).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
+        driver.findElement(uploadPermitDoc).sendKeys("C:\\Users\\Administrator\\Documents\\Dummy.pdf");
     }
 
     public void setCirclemap() {
@@ -359,10 +373,10 @@ public class Project extends BasePage {
         Thread.sleep(1000);
     }
     public void setUploadSpacePaperwork() {
-        driver.findElement(uploadSpacePaperwork).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
+        driver.findElement(uploadSpacePaperwork).sendKeys("C:\\Users\\Administrator\\Documents\\Dummy.pdf");
     }
     public void setUploadJsa() {
-        driver.findElement(uploadJsa).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
+        driver.findElement(uploadJsa).sendKeys("C:\\Users\\Administrator\\Documents\\Dummy.pdf");
     }
     public void setAddprojectbutton1() throws InterruptedException {
         driver.findElement(addprojectbutton1).click();

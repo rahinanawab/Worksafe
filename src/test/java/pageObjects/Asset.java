@@ -16,7 +16,7 @@ import java.util.Set;
 public class Asset extends BasePage{
 
 //    private final By assettab = By.xpath("//*[@aria-describedby='«rf»']");
-    private final By assettab = By.xpath("//div[@class='_MainSidecontainer_dyg2d_1']//div[@class='_NavigationIcon_dyg2d_23'][7]");
+private final By assettab = By.cssSelector("div[class='_sideBarScroller_123ft_14'] div:nth-child(7)");
     private final By createAssetButton = By.xpath("//div[@class='_TabHeader_1vq1m_12']//div/button[3]");
     private final By assettype = By.id("rc_select_1");
     private final By department = By.id("rc_select_2");
@@ -33,11 +33,13 @@ public class Asset extends BasePage{
     private final By closeextradata = By.xpath("//div[@class='ant-drawer-content-wrapper']//button[@aria-label='Close']");
     private final By notificationtimeminute = By.xpath("//input[@placeholder='Enter Pre-Notification Time']");
     private final By uploadPhoto = By.xpath("(//input[@accept='.png,.jpg,.jpeg,.svg'])");
-    private final By uploadDoc = By.xpath("(//input[@accept='.pdf,.docx,.doc'])");
+    private final By uploadDoc = By.xpath("(//input[@accept='.pdf'])[1]");
+    private final By uploadInspectionDoc = By.xpath("(//input[@accept='.pdf'])[2]");
     private final By circlemap = By.xpath("//div[@class='_PolyCard_1fzsm_250']//div[1]");
     private final By addassetbutton = By.xpath("//button[normalize-space()='Add Asset']");
     private final By optionasset = By.xpath("(//*[name()='svg'][@class='ant-dropdown-trigger'])[1]");
     private final By editassetbutton = By.xpath("//button[normalize-space()='Save Asset']");
+    private final By search_asset = By.xpath("//input[@id='ListSearch']");
 
     private final Random random = new Random();
 
@@ -54,6 +56,23 @@ public class Asset extends BasePage{
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
         driver.findElement(assettab).click();
     }
+
+    public void searchasset() throws InterruptedException {
+        try {
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+            Thread.sleep(7000);
+            driver.findElement(search_asset).sendKeys("notifications");
+        }
+        catch(org.openqa.selenium.StaleElementReferenceException ex)
+        {
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+            Thread.sleep(7000);
+
+            driver.findElement(search_asset).sendKeys("notifications");
+        }
+        Thread.sleep(4000);
+    }
+
     public void createButton() throws InterruptedException {
         driver.findElement(createAssetButton).click();
     }
@@ -244,11 +263,15 @@ public class Asset extends BasePage{
         driver.findElement(notificationtimeminute).sendKeys("5");
     }
     public void setUploadPhoto() {
-        driver.findElement(uploadPhoto).sendKeys("C:\\Users\\Maze Digital\\Pictures\\Screenshots\\Screenshot 2025-07-14 203433.png");
+        driver.findElement(uploadPhoto).sendKeys("C:\\Users\\Administrator\\Pictures\\Screenshots\\Screenshot 2025-09-22 060314.png");
     }
 
     public void setUploadDoc() {
-        driver.findElement(uploadDoc).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
+        driver.findElement(uploadDoc).sendKeys("C:\\Users\\Administrator\\Documents\\Dummy.pdf");
+    }
+
+    public void setUploadInspectionDoc() {
+        driver.findElement(uploadInspectionDoc).sendKeys("C:\\Users\\Administrator\\Documents\\Dummy.pdf");
     }
 
     public void setCirclemap() {
