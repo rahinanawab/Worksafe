@@ -1,2 +1,2 @@
-C:\Users\Administrator\IdeaProjects\TestingWorksafe
+C:\Users\Administrator\IdeaProjects\Worksafe
 mvn test
