@@ -10,5 +10,6 @@ public class TeamTest extends BaseTest {
             team.teamtab();
             team.searchteam();
             team.addmember();
+            team.removemember();
         }
 }

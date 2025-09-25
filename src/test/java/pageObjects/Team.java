@@ -1,8 +1,6 @@
 package pageObjects;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -27,6 +25,7 @@ public class Team extends BasePage {
     private final By manager = By.id("rc_select_2");
     private final By adduserbutton = By.xpath("//button[normalize-space()='Add user']");
     private final By search = By.xpath("//input[@placeholder='Search team']");
+
 
 
     private final By removeteam = By.xpath("(//tr[contains(@class,'ant-table-row')][1]/td[3]//p)[1]");
@@ -142,5 +141,41 @@ public class Team extends BasePage {
         driver.findElement(adduserbutton).click();
         Thread.sleep(2000);
     }
+    public void removemember() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        Thread.sleep(2000);
+
+        WebElement member = wait.until(ExpectedConditions.elementToBeClickable(removeteam));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", member);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", member);
+
+        List<WebElement> checkboxes = wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(selectCheckboxes, 1));
+
+        Collections.shuffle(checkboxes, new Random());
+
+        int selected = 0;
+        for (WebElement checkbox : checkboxes) {
+            if (selected >= 2) break;
+            try {
+                if (!checkbox.isSelected()) {
+                    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", checkbox);
+                    selected++;
+                }
+            } catch (ElementClickInterceptedException | StaleElementReferenceException e) {
+                System.out.println("Retrying click due to: " + e.getMessage());
+                try {
+                    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", checkbox);
+                    selected++;
+                } catch (Exception ex) {
+                    System.out.println("Failed to click checkbox after retry.");
+                }
+            }
+        }
+        Thread.sleep(2000);
+
+        WebElement removeBtn = wait.until(ExpectedConditions.elementToBeClickable(removeButton));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", removeBtn);
+    }
+
 
 }

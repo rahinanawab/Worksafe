@@ -1,7 +1,6 @@
 package TestCases;
 
 import org.testng.annotations.Test;
-import pageObjects.RemoveTeam;
 
 public class RemoveTeamTest extends BaseTest {
     @Test(priority = 5, dependsOnMethods = "TestCases.LoginTest.testLogin")

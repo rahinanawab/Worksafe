@@ -5,7 +5,7 @@ import pageObjects.Filter;
 import pageObjects.Payment;
 
 public class PaymentTest extends BaseTest{
-    @Test(priority = 10, dependsOnMethods = "TestCases.LoginTest.testLogin")
+    @Test(priority = 7, dependsOnMethods = "TestCases.LoginTest.testLogin")
     public void payments() throws InterruptedException {
         payment = new Payment();
         payment.payment();

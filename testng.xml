@@ -7,13 +7,10 @@
             <class name="TestCases.SelectWorksiteTest"/>
             <class name="TestCases.FilterTest"/>
             <class name="TestCases.TeamTest"/>
-<!--            <class name="TestCases.RemoveTeamTest"/>-->
-            <class name="TestCases.SearchUserTest"/>
-            <class name="TestCases.CompanyStorageTest"/>
-<!--            <class name="TestCases.CompanyLicenseTest"/>-->
-<!--            <class name="TestCases.PaymentTest"/>-->
-<!--            <class name="TestCases.PoiTest"/>-->
-<!--            <class name="TestCases.SearchPoiTest"/>-->
+            <class name="TestCases.UsersTest"/>
+<!--            <class name="TestCases.CompanyTest"/>-->
+            <class name="TestCases.PaymentTest"/>
+            <class name="TestCases.PoiTest"/>
 <!--            <class name="TestCases.AlertTest"/>-->
 <!--            <class name="TestCases.SearchAlertTest"/>-->
 <!--            <class name="TestCases.AssetTest"/>-->

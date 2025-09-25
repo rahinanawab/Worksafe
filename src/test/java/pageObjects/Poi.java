@@ -13,7 +13,9 @@ import java.util.Set;
 
 public class Poi extends BasePage {
 //    private final By poitab = By.xpath("//*[@aria-describedby='«rb»']");
-    private final By poitab = By.xpath("//div[@class='_MainSidecontainer_dyg2d_1']//div[@class='_NavigationIcon_dyg2d_23'][5]");
+//    private final By poitab = By.xpath("//div[@class='_MainSidecontainer_dyg2d_1']//div[@class='_NavigationIcon_dyg2d_23'][5]");
+
+    private final By poitab = By.cssSelector("div[class='_sideBarScroller_123ft_14'] div:nth-child(5)");
     private final By createPOIButton = By.xpath("//div[@class='_TabHeader_1vq1m_12']//div/button[4]");
     private final By title = By.xpath("//input[@placeholder='Enter Title']");
     private final By threatlevel = By.id("rc_select_1");
@@ -35,6 +37,7 @@ public class Poi extends BasePage {
     private final By addpoibutton = By.xpath("//button[normalize-space()='Add POI']");
     private final By optionpoi = By.xpath("(//*[name()='svg'][@class='ant-dropdown-trigger'])[1]");
     private final By editpoibutton = By.xpath("//button[normalize-space()='Save POI']");
+    private final By search_poi = By.xpath("//input[@id='ListSearch']");
 
     private final Random random = new Random();
 
@@ -50,6 +53,22 @@ public class Poi extends BasePage {
     public void poi() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.findElement(poitab).click();
+    }
+
+    public void searchpoi() throws InterruptedException {
+        try {
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+            Thread.sleep(7000);
+            driver.findElement(search_poi).sendKeys("msns");
+        }
+        catch(org.openqa.selenium.StaleElementReferenceException ex)
+        {
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+            Thread.sleep(7000);
+
+            driver.findElement(search_poi).sendKeys("msns");
+        }
+        Thread.sleep(4000);
     }
 
     public void createButton() throws InterruptedException {
@@ -188,8 +207,8 @@ public class Poi extends BasePage {
         System.out.println("Date and time selected successfully!");
         driver.findElement(description).sendKeys(getRandomString(10));
         driver.findElement(notificationBody).sendKeys(getRandomString(6));
-        driver.findElement(uploadDoc).sendKeys("C:\\Users\\Maze Digital\\Desktop\\dummy.pdf");
-        driver.findElement(uploadPhoto).sendKeys("C:\\Users\\Maze Digital\\Pictures\\Screenshots\\Screenshot 2025-07-14 203433.png");
+        driver.findElement(uploadDoc).sendKeys("C:\\Users\\Administrator\\Documents\\Dummy.pdf");
+        driver.findElement(uploadPhoto).sendKeys("C:\\Users\\Administrator\\Pictures\\Screenshots\\Screenshot 2025-09-22 060314.png");
         driver.findElement(circlemap).click();
         driver.findElement(addpoibutton).click();
         Thread.sleep(1000);
